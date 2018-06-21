@@ -4,9 +4,30 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        <style>
+            {% block style %}{% endblock %}
+        </style>
     </head>
     <body>
+        {% block nav %}
+            <nav>
+                <ul>
+                    <li><a href="http://127.0.0.1:8000/">Accueil</a></li>
+                    <li><a href="http://127.0.0.1:8000/decouvrir-le-corps-spatial">Découvrir</a></li>
+                    <li><a href="http://127.0.0.1:8000/actualites">Actualités</a></li>
+                    <li><a href="http://127.0.0.1:8000/metiers">Métiers</a></li>
+                    <li><a href="http://127.0.0.1:8000/processus-de-recrutement">Processus de recrutement</a></li>
+                    <li><a href="http://127.0.0.1:8000/contactez-nous">Contactez nous</a></li>
+                    <li><a href="http://127.0.0.1:8000/engagez-vous">Engagez vous</a></li>
+                </ul>
+            </nav>
+        {% endblock %}
         {% block body %}{% endblock %}
+        {% block footer %}
+            <footer>
+                this is the footer
+            </footer>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
