@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controllerName }}!{% endblock %}
+
+{% block body %}
+    <p>{{ article.getTitle() }}</p>
+    <p>{{ article.getDescription() }}</p>
+    <p>{{ article.getAvailableSeats() }}</p>
+    <p>{{ article.getCategory() }}</p>
+    <p>{{ article.getSalary() }}</p>
+    <p>{{ article.getContractType() }}</p>
+    <p>{{ article.getContractDuration() }}</p>
+    <p>{{ article.getRank() }}</p>
+    <p>{{ article.getRankDescription() }}</p>
+    <p>{{ article.getPrerequisiteTemper() }}</p>
+    <p>{{ article.getPrerequisiteAge() }}</p>
+    <p>{{ article.getPrerequisiteEducation() }}</p>
+    <p>{{ article.getCaracteristicsAction() }}</p>
+    <p>{{ article.getCaracteristicsLeadership() }}</p>
+    <p>{{ article.getCaracteristicsAnalytic() }}</p>
+    <p>{{ article.getCaracteristicsTechnophile() }}</p>
+{% endblock %}

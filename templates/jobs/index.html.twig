@@ -1,10 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Hello {{ controllerName }}!{% endblock %}
 
 {% block body %}
     <div class="example-wrapper">
         <p>this is the content of the "<span></span>" page</p>
-        <script>document.querySelector("span").textContent = "{{ controller_name }}".replace("Controller", "");</script>
+        <script>document.querySelector("span").textContent = "{{ controllerName }}".replace("Controller", "");</script>
     </div>
+    {% for article in articleList %}
+        <article>
+            <h2>{{ article.title }}</h2>
+            <p>{{ article.category }}</p>
+            <p>{{ article.salary }}</p>
+            <a href="metiers/{{ article.id }}">See article</a>
+        </article>
+    {% endfor %}
 {% endblock %}

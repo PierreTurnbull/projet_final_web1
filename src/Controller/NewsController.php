@@ -17,7 +17,7 @@ class NewsController extends Controller
             ->getRepository(News::class)
             ->findAll();
         return $this->render('news/index.html.twig', [
-            'controller_name' => 'NewsController',
+            'controllerName' => 'NewsController',
             'articleList' => $articleList
         ]);
     }
@@ -30,15 +30,9 @@ class NewsController extends Controller
         $article = $this->getDoctrine()
             ->getRepository(News::class)
             ->find($id);
-        if (!$article) {
-            $article = "no product found";
-        }
         return $this->render('news/article.html.twig', [
-            'controller_name' => 'NewsController',
-            'articleTitle' => $article->getTitle(),
-            'articleContent' => $article->getContent(),
-            'articleCategory' => $article->getCategory(),
-            'articleCreationDate' => $article->getCreationDate()
+            'controllerName' => 'NewsController',
+            'article' => $article
         ]);
     }
 }

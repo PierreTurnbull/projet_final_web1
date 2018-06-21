@@ -1,10 +1,10 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Hello {{ controllerName }}!{% endblock %}
 
 {% block body %}
-    <h1>{{ articleTitle }}</h1>
-    <p>category: {{ articleTitle }}</p>
-    <p>{{ articleContent }}</p>
-    <p>Date: {{ articleCreationDate.format('Y-m-d H:i:s') }}</p>
+    <h1>{{ article.getTitle() }}</h1>
+    <p>category: {{ article.getContent() }}</p>
+    <p>{{ article.getCategory() }}</p>
+    <p>Date: {{ article.getCreationDate().format('Y-m-d H:i:s') }}</p>
 {% endblock %}
