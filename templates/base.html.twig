@@ -24,11 +24,14 @@
             </nav>
         {% endblock %}
         {% block body %}{% endblock %}
+        <div id="app">SALUT</div>
         {% block footer %}
             <footer>
                 this is the footer
             </footer>
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('build/app.js') }}"></script>
+        {% endblock %}
     </body>
 </html>
