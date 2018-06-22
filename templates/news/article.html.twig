@@ -3,8 +3,5 @@
 {% block title %}Hello {{ controllerName }}!{% endblock %}
 
 {% block body %}
-    <h1>{{ article.getTitle() }}</h1>
-    <p>category: {{ article.getContent() }}</p>
-    <p>{{ article.getCategory() }}</p>
-    <p>Date: {{ article.getCreationDate().format('Y-m-d H:i:s') }}</p>
+    <div>article data</div>
 {% endblock %}

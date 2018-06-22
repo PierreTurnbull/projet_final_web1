@@ -35,4 +35,29 @@ class NewsController extends Controller
             'article' => $article
         ]);
     }
+
+    /**
+     * @Route("/api/news-list", name="newsList")
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public static function getNewsList()
+    {
+        $data = $this
+            ->getDoctrine()
+            ->getRepository(News::class)
+            ->findAll();
+        return $this->json($data);
+    }
+
+    /**
+     * @Route("/api/news-list/{id}", name="job")
+     */
+    public static function getNews($id)
+    {
+        $data = $this
+            ->getDoctrine()
+            ->getRepository(News::class)
+            ->find($id);
+        return $this->json($data);
+    }
 }
