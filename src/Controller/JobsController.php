@@ -13,7 +13,8 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $articleList = $this->getDoctrine()
+        $articleList = $this
+            ->getDoctrine()
             ->getRepository(Jobs::class)
             ->findAll();
         return $this->render('jobs/index.html.twig', [
@@ -27,12 +28,38 @@ class JobsController extends Controller
      */
     public function article($id)
     {
-        $article = $this->getDoctrine()
+        $article = $this
+            ->getDoctrine()
             ->getRepository(Jobs::class)
             ->find($id);
         return $this->render('jobs/article.html.twig', [
             'controllerName' => 'JobsController',
             'article' => $article
         ]);
+    }
+
+    /**
+     * @Route("/api/job-list", name="jobList")
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
+     */
+    public static function getJobList()
+    {
+        $data = $this
+            ->getDoctrine()
+            ->getRepository(Jobs::class)
+            ->findAll();
+        return $this->json($data);
+    }
+
+    /**
+     * @Route("/api/job-list/{id}", name="job")
+     */
+    public static function getJob($id)
+    {
+        $data = $this
+            ->getDoctrine()
+            ->getRepository(Jobs::class)
+            ->find($id);
+        return $this->json($data);
     }
 }
