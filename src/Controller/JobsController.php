@@ -13,13 +13,8 @@ class JobsController extends Controller
      */
     public function index()
     {
-        $articleList = $this
-            ->getDoctrine()
-            ->getRepository(Jobs::class)
-            ->findAll();
         return $this->render('jobs/index.html.twig', [
-            'controllerName' => 'JobsController',
-            'articleList' => $articleList
+            'controllerName' => 'JobsController'
         ]);
     }
 
@@ -28,13 +23,8 @@ class JobsController extends Controller
      */
     public function article($id)
     {
-        $article = $this
-            ->getDoctrine()
-            ->getRepository(Jobs::class)
-            ->find($id);
         return $this->render('jobs/article.html.twig', [
-            'controllerName' => 'JobsController',
-            'article' => $article
+            'controllerName' => 'JobsController'
         ]);
     }
 
