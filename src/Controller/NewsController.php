@@ -50,7 +50,7 @@ class NewsController extends Controller
     }
 
     /**
-     * @Route("/api/news-list/{id}", name="job")
+     * @Route("/api/news-list/{id}", name="news")
      */
     public static function getNews($id)
     {

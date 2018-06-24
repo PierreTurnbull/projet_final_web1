@@ -43,6 +43,7 @@ class JobsController extends Controller
 
     /**
      * @Route("/api/job-list/{id}", name="job")
+     * @return \Symfony\Component\HttpFoundation\JsonResponse
      */
     public static function getJob($id)
     {
