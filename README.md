@@ -6,23 +6,23 @@ Vous trouverez dans ce dépôt l'ensemble des ressources concernant le site de r
 
 Téléchargez le dépôt.
 
-``git clone https://github.com/PierreTurnbull/projet_final_web1``
+    git clone https://github.com/PierreTurnbull/projet_final_web1
 
 Allez dans le dépôt que vous venez de télécharger.
 
-``cd projet_final_web1``
+    cd projet_final_web1
 
 Installez les dépendances de ``composer``.
 
-``composer install``
+    composer install
 
 Installez les dépendances de ``npm``.
 
-``npm install``
+    npm install
 
 Construisez les fichiers VueJS.
 
-``node_modules/.bin/encore dev``
+    node_modules/.bin/encore dev
 
 ## Lancement du serveur
 
