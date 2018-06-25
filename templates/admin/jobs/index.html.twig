@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jobs index{% endblock %}
+
+{% block body %}
+    <h1>Jobs index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Available_seats</th>
+                <th>Category</th>
+                <th>Salary</th>
+                <th>Contract_type</th>
+                <th>Contract_duration</th>
+                <th>Rank</th>
+                <th>Rank_description</th>
+                <th>Prerequisite_temper</th>
+                <th>Prerequisite_age</th>
+                <th>Prerequisite_education</th>
+                <th>Caracteristics_action</th>
+                <th>Caracteristics_leadership</th>
+                <th>Caracteristics_analytic</th>
+                <th>Caracteristics_technophile</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for job in jobs %}
+            <tr>
+                <td>{{ job.id }}</td>
+                <td>{{ job.title }}</td>
+                <td>{{ job.description }}</td>
+                <td>{{ job.availableSeats }}</td>
+                <td>{{ job.category }}</td>
+                <td>{{ job.salary }}</td>
+                <td>{{ job.contractType }}</td>
+                <td>{{ job.contractDuration }}</td>
+                <td>{{ job.rank }}</td>
+                <td>{{ job.rankDescription }}</td>
+                <td>{{ job.prerequisiteTemper }}</td>
+                <td>{{ job.prerequisiteAge }}</td>
+                <td>{{ job.prerequisiteEducation }}</td>
+                <td>{{ job.caracteristicsAction }}</td>
+                <td>{{ job.caracteristicsLeadership }}</td>
+                <td>{{ job.caracteristicsAnalytic }}</td>
+                <td>{{ job.caracteristicsTechnophile }}</td>
+                <td>
+                    <a href="{{ path('jobs_show', {'id': job.id}) }}">show</a>
+                    <a href="{{ path('jobs_edit', {'id': job.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="18">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('jobs_new') }}">Create new</a>
+{% endblock %}

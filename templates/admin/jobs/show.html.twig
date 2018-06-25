@@ -1,0 +1,86 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Jobs{% endblock %}
+
+{% block body %}
+    <h1>Jobs</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ job.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ job.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ job.description }}</td>
+            </tr>
+            <tr>
+                <th>Available_seats</th>
+                <td>{{ job.availableSeats }}</td>
+            </tr>
+            <tr>
+                <th>Category</th>
+                <td>{{ job.category }}</td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td>{{ job.salary }}</td>
+            </tr>
+            <tr>
+                <th>Contract_type</th>
+                <td>{{ job.contractType }}</td>
+            </tr>
+            <tr>
+                <th>Contract_duration</th>
+                <td>{{ job.contractDuration }}</td>
+            </tr>
+            <tr>
+                <th>Rank</th>
+                <td>{{ job.rank }}</td>
+            </tr>
+            <tr>
+                <th>Rank_description</th>
+                <td>{{ job.rankDescription }}</td>
+            </tr>
+            <tr>
+                <th>Prerequisite_temper</th>
+                <td>{{ job.prerequisiteTemper }}</td>
+            </tr>
+            <tr>
+                <th>Prerequisite_age</th>
+                <td>{{ job.prerequisiteAge }}</td>
+            </tr>
+            <tr>
+                <th>Prerequisite_education</th>
+                <td>{{ job.prerequisiteEducation }}</td>
+            </tr>
+            <tr>
+                <th>Caracteristics_action</th>
+                <td>{{ job.caracteristicsAction }}</td>
+            </tr>
+            <tr>
+                <th>Caracteristics_leadership</th>
+                <td>{{ job.caracteristicsLeadership }}</td>
+            </tr>
+            <tr>
+                <th>Caracteristics_analytic</th>
+                <td>{{ job.caracteristicsAnalytic }}</td>
+            </tr>
+            <tr>
+                <th>Caracteristics_technophile</th>
+                <td>{{ job.caracteristicsTechnophile }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('jobs_index') }}">back to list</a>
+
+    <a href="{{ path('jobs_edit', {'id': job.id}) }}">edit</a>
+
+    {{ include('admin/jobs/_delete_form.html.twig') }}
+{% endblock %}
