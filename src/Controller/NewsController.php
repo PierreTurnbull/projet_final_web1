@@ -17,7 +17,7 @@ class NewsController extends Controller
             ->getRepository(News::class)
             ->findAll();
         return $this->render('news/index.html.twig', [
-            'controllerName' => 'NewsController',
+            'controllerName' => 'newsController',
             'articleList' => $articleList
         ]);
     }
@@ -31,7 +31,7 @@ class NewsController extends Controller
             ->getRepository(News::class)
             ->find($id);
         return $this->render('news/article.html.twig', [
-            'controllerName' => 'NewsController',
+            'controllerName' => 'newsController',
             'article' => $article
         ]);
     }
