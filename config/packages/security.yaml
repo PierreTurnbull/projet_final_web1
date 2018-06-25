@@ -2,11 +2,6 @@ security:
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
 #    providers:
 #        in_memory: { memory: ~ }
-    providers:
-        user_provider:
-            entity:
-                class: App\Entity\User
-                property: username
     encoders:
         App\Entity\User:
             algorithm: bcrypt
@@ -15,7 +10,7 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-#            pattern: ^/
+            pattern: ^/
             provider: user_provider
             anonymous: ~
             form_login:
@@ -29,6 +24,11 @@ security:
 
             # form_login: true
             # https://symfony.com/doc/current/security/form_login_setup.html
+    providers:
+        user_provider:
+            entity:
+                class: App\Entity\User
+                property: username
 
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
