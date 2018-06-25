@@ -13,7 +13,7 @@ class RecruitmentController extends Controller
     public function index()
     {
         return $this->render('recruitment/index.html.twig', [
-            'controller_name' => 'RecruitmentController',
+            'controllerName' => 'RecruitmentController',
         ]);
     }
 }
