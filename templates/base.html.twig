@@ -7,11 +7,67 @@
         <style>
             {% block style %}{% endblock %}
         </style>
-        <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+        <link rel="stylesheet" href="{{ 'build/css/foundation.min.css' }}" />
+        <link rel="stylesheet" href="{{ 'build/css/app.css' }}" />
     </head>
     <body>
-        <div id="app">Oups... Problème</div>
+        {% block nav %}
+           <div class="Navigation">
+            <div class="grid-container">
+                <div class="grid-x align-justify align-middle">
+                <div class="Navigation__logo cell small-5 large-3">
+                    <router-link
+                        to="/"
+                        @click.native="hideMenu">
+                        <a class="Navigation__logoLink">CSAF</a>
+                    </router-link>
+                </div>      
+                
+                <input type="checkbox"  id="burger" v-model="isChecked" @change="disableScrollify" class="Navigation__toggle cell small-1">
+                <label for="burger" class="Navigation__toggleLabel cell small-1 hide-for-large"><span></span></label>
+
+                <nav class="Navigation__menuContainer cell small-12 large-9">
+                    <ul class="Navigation__menu grid-x align-right">
+                    
+                        <li class="Navigation__item" >
+                            <a class="Navigation__itemLink">Découvrir</a>
+                        </li>
+
+                        <li class="Navigation__item" >
+                            <a class="Navigation__itemLink">Actualités</a>
+                        </li>
+
+                        <li class="Navigation__item" >
+                            <a class="Navigation__itemLink">Métiers</a>
+                        </li>
+
+                        <li class="Navigation__item" >
+                            <a class="Navigation__itemLink">Processus de recrutement</a>
+                        </li>
+
+                        <li class="Navigation__item" >
+                            <a class="Navigation__itemLink">Engagez-vous</a>
+                        </li>
+
+                        <li class="Navigation__item" >
+                            <a class="Navigation__itemLink">Contactez-nous</a>
+                        </li>
+
+                        <li class="Navigation__item" >
+                            <a class="Navigation__itemLink">Mon compte</a>
+                        </li>
+                    </ul> 
+                </nav>
+                </div>
+            </div>
+        </div>
+        {% endblock %}
+        {% block body %}{% endblock %}
+        {% block footer %}
+            <footer>
+                this is the footer
+            </footer>
+        {% endblock %}
         {% block javascripts %}{% endblock %}
-        <script src="{{ asset('build/app.js') }}"></script>
     </body>
 </html>

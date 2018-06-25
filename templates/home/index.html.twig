@@ -3,8 +3,81 @@
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-<div class="example-wrapper">
-    <p>this is the content of the "<span></span>" page</p>
-    <script>document.querySelector("span").textContent = "{{ controller_name }}".replace("Controller", "");</script>
-</div>
+<div class="wrapper">
+    <section class="header section grid-x align-middle">
+      <canvas-bg class="header__background"></canvas-bg>
+      <div class="grid-container cell header__hover">
+        <div class="grid-x align-middle">
+          <div class="cell small-10 large-8">
+            <div class="grid-x grid-padding-x">
+              <h1 class="header__title cell large-12">Corps spatial de l'armée française</h1>
+              <p class="header__text cell large-7">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, possimus ab? 
+              </p>
+              <div class="cell large-12">
+                <router-link to="/">
+                  <a >Engagez-vous</a>
+                </router-link>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="header section grid-x align-middle">
+      <div class="grid-container cell header__hover">
+        <div class="grid-x align-middle">
+          <div class="cell small-10 large-8">
+            <div class="grid-x grid-padding-x">
+              <h1 class="header__title cell large-12">Nos emplois</h1>
+              <p class="header__text cell large-7">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, possimus ab? 
+              </p>
+              <div class="cell large-12">
+                <router-link to="/">
+                  <a >Engagez-vous</a>
+                </router-link>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="header section grid-x align-middle">
+      <div class="grid-container cell header__hover">
+        <div class="grid-x align-middle">
+          <div class="cell small-10 large-8">
+            <div class="grid-x grid-padding-x">
+              <h1 class="header__title cell large-12">Parcours de recrutement</h1>
+              <p class="header__text cell large-7">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, possimus ab? 
+              </p>
+              <div class="cell large-12">
+                <router-link to="/">
+                  <a >Engagez-vous</a>
+                </router-link>
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="progress grid-x">
+      <div class="progress__number cell large-12">
+        01
+      </div>
+      <div class="progress__bar cell large-12">
+        <span></span>
+      </div>
+      <div class="progress__number progress__number__isActive cell large-12">
+        06
+      </div>
+    </div>
+  </div>
 {% endblock %}
