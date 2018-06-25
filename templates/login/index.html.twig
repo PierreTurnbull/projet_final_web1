@@ -1,7 +1,21 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Hello {{ controllerName }}!{% endblock %}
 
 {% block body %}
-    <p>login page</p>
+    <h2>login page</h2>
+    {# if an error occured while authenticating, show the error message #}
+    {% if error %}
+        <p>{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+    {% endif %}
+    {# login form #}
+    <form action="{{ path('login') }}" method="post">
+        <label for="username">Username:</label>
+        {# do not change the name property of any input #}
+        <input type="text" id="username" name="_username" value="{{ lastUsername }}" />
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="_password" />
+        <input type="hidden" name="_target_path" value="/" />
+        <button type="submit">login</button>
+    </form>
 {% endblock %}
