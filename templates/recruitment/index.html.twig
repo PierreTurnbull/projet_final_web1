@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello {{ controllerName }}!{% endblock %}
+
+{% block body %}
+    <div class="example-wrapper">
+        <p>this is the content of the "<span></span>" page</p>
+        <script>document.querySelector("span").textContent = "{{ controllerName }}".replace("Controller", "");</script>
+    </div>
+{% endblock %}
