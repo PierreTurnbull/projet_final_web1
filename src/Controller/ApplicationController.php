@@ -37,24 +37,4 @@ class ApplicationController extends Controller
             'form' => $form->createView(),
         ]);
     }
-
-    /**
-     * @Route("/{id}/edit", name="application_edit", methods="GET|POST")
-     */
-    public function edit(Request $request, Application $application): Response
-    {
-        $form = $this->createForm(ApplicationType::class, $application);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $this->getDoctrine()->getManager()->flush();
-
-            return $this->redirectToRoute('application_edit', ['id' => $application->getId()]);
-        }
-
-        return $this->render('application/edit.html.twig', [
-            'application' => $application,
-            'form' => $form->createView(),
-        ]);
-    }
 }
