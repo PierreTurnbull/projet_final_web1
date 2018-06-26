@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <style>
@@ -20,14 +21,14 @@
                         @click.native="hideMenu">
                         <a class="Navigation__logoLink">CSAF</a>
                     </router-link>
-                </div>      
-                
+                </div>
+
                 <input type="checkbox"  id="burger" v-model="isChecked" @change="disableScrollify" class="Navigation__toggle cell small-1">
                 <label for="burger" class="Navigation__toggleLabel cell small-1 hide-for-large"><span></span></label>
 
                 <nav class="Navigation__menuContainer cell small-12 large-9">
                     <ul class="Navigation__menu grid-x align-right">
-                    
+
                         <li class="Navigation__item" >
                             <a class="Navigation__itemLink">Découvrir</a>
                         </li>
@@ -55,7 +56,7 @@
                         <li class="Navigation__item" >
                             <a class="Navigation__itemLink">Mon compte</a>
                         </li>
-                    </ul> 
+                    </ul>
                 </nav>
                 </div>
             </div>
