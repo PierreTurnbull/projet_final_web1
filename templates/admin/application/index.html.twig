@@ -15,6 +15,7 @@
                 <th>Phone</th>
                 <th>Address</th>
                 <th>Job</th>
+                <th>State</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -28,6 +29,7 @@
                 <td>{{ application.phone }}</td>
                 <td>{{ application.address }}</td>
                 <td>{{ application.job }}</td>
+                <td>{{ application.state }}</td>
                 <td>
                     <a href="{{ path('application_show', {'id': application.id}) }}">show</a>
                 </td>

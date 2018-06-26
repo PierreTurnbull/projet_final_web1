@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `applicationPage`
+-- Table structure for table `application`
 --
 
 DROP TABLE IF EXISTS `application`;
@@ -30,17 +30,19 @@ CREATE TABLE `application` (
   `phone` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `job` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `applicationPage`
+-- Dumping data for table `application`
 --
 
 LOCK TABLES `application` WRITE;
-/*!40000 ALTER TABLE `applicationPage` DISABLE KEYS */;
-/*!40000 ALTER TABLE `applicationPage` ENABLE KEYS */;
+/*!40000 ALTER TABLE `application` DISABLE KEYS */;
+INSERT INTO `application` VALUES (1,'aa','aaa','a','a','a','a',1),(2,'abbbbb','a','a','a','a','a',1),(3,'c','c','c','c','c','c',2),(4,'i','i','i','i','i','i',1);
+/*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -101,7 +103,7 @@ CREATE TABLE `migration_versions` (
 
 LOCK TABLES `migration_versions` WRITE;
 /*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
-INSERT INTO `migration_versions` VALUES ('20180621152939'),('20180621171214'),('20180622133446'),('20180624173007'),('20180625104503'),('20180625114127'),('20180625114938'),('20180625115033'),('20180626092103'),('20180626093722'),('20180626094112'),('20180626135647');
+INSERT INTO `migration_versions` VALUES ('20180621152939'),('20180621171214'),('20180622133446'),('20180624173007'),('20180625104503'),('20180625114127'),('20180625114938'),('20180625115033'),('20180626092103'),('20180626093722'),('20180626094112'),('20180626135647'),('20180626141720');
 /*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -170,4 +172,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-26 15:57:15
+-- Dump completed on 2018-06-26 16:20:22

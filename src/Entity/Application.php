@@ -46,6 +46,16 @@ class Application
      */
     private $job;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $state;
+
+    public function __construct()
+    {
+        $this->state = 1;
+    }
+
     public function getId()
     {
         return $this->id;
@@ -119,6 +129,18 @@ class Application
     public function setJob(string $job): self
     {
         $this->job = $job;
+
+        return $this;
+    }
+
+    public function getState(): ?int
+    {
+        return $this->state;
+    }
+
+    public function setState(int $state): self
+    {
+        $this->state = $state;
 
         return $this;
     }
