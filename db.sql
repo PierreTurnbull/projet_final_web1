@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `application`
+-- Table structure for table `applicationPage`
 --
 
 DROP TABLE IF EXISTS `application`;
@@ -35,12 +35,12 @@ CREATE TABLE `application` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `application`
+-- Dumping data for table `applicationPage`
 --
 
 LOCK TABLES `application` WRITE;
-/*!40000 ALTER TABLE `application` DISABLE KEYS */;
-/*!40000 ALTER TABLE `application` ENABLE KEYS */;
+/*!40000 ALTER TABLE `applicationPage` DISABLE KEYS */;
+/*!40000 ALTER TABLE `applicationPage` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

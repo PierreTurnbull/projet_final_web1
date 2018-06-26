@@ -1,10 +1,45 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}Application index{% endblock %}
 
 {% block body %}
-    <div class="example-wrapper">
-        <p>this is the content of the "<span></span>" page</p>
-        <script>document.querySelector("span").textContent = "{{ controller_name }}".replace("Controller", "");</script>
-    </div>
+    <h1>Application index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Address</th>
+                <th>Job</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for application in applications %}
+            <tr>
+                <td>{{ application.id }}</td>
+                <td>{{ application.firstName }}</td>
+                <td>{{ application.lastName }}</td>
+                <td>{{ application.email }}</td>
+                <td>{{ application.phone }}</td>
+                <td>{{ application.address }}</td>
+                <td>{{ application.job }}</td>
+                <td>
+                    <a href="{{ path('application_show', {'id': application.id}) }}">show</a>
+                    <a href="{{ path('application_edit', {'id': application.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('application_new') }}">Create new</a>
 {% endblock %}
