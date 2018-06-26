@@ -1,0 +1,15 @@
+.background {
+  background: url('/build/img/satellite.png')bottom right no-repeat;
+}
+
+.recrutement {
+  .margin_bottom {
+    margin-bottom: 10em;
+  }
+  .submit {
+    &_container {}
+    &_number {}
+    &_img {}
+    &_title {}
+  }
+}
