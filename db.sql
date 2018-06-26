@@ -16,6 +16,34 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `application`
+--
+
+DROP TABLE IF EXISTS `application`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `application` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `first_name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `last_name` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phone` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `job` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `application`
+--
+
+LOCK TABLES `application` WRITE;
+/*!40000 ALTER TABLE `application` DISABLE KEYS */;
+/*!40000 ALTER TABLE `application` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `jobs`
 --
 
@@ -73,7 +101,7 @@ CREATE TABLE `migration_versions` (
 
 LOCK TABLES `migration_versions` WRITE;
 /*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
-INSERT INTO `migration_versions` VALUES ('20180621152939'),('20180621171214'),('20180622133446'),('20180624173007'),('20180625104503'),('20180625114127');
+INSERT INTO `migration_versions` VALUES ('20180621152939'),('20180621171214'),('20180622133446'),('20180624173007'),('20180625104503'),('20180625114127'),('20180625114938'),('20180625115033'),('20180626092103'),('20180626093722'),('20180626094112'),('20180626135647');
 /*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -91,7 +119,7 @@ CREATE TABLE `news` (
   `category` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `creation_date` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +144,7 @@ CREATE TABLE `users` (
   `username` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `roles` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `roles` json NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_1483A5E9F85E0677` (`username`),
   UNIQUE KEY `UNIQ_1483A5E9E7927C74` (`email`)
@@ -129,7 +157,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','$2a$08$jHZj/wJfcVKlIwr5AvR78euJxYK7Ku5kURNhNx.7.CSIJ3Pq6LEPC','admin@example.com','ROLE_ADMIN'),(2,'user','$2y$10$ei0eymcSVso5klVWdbHoteJKBMB0eTPxrGehbtOK608YCfp2t/cnW','user@example.com','ROLE_USER');
+INSERT INTO `users` VALUES (1,'admin','$2a$08$jHZj/wJfcVKlIwr5AvR78euJxYK7Ku5kURNhNx.7.CSIJ3Pq6LEPC','admin@example.com','[\"ROLE_ADMIN\"]'),(2,'user','$2y$10$ei0eymcSVso5klVWdbHoteJKBMB0eTPxrGehbtOK608YCfp2t/cnW','user@example.com','[\"ROLE_USER\"]');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -142,4 +170,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-25 13:42:37
+-- Dump completed on 2018-06-26 15:57:15
