@@ -2,8 +2,12 @@
 
 {% block body %}
     <br><br><br><br><br><br>
-    {% if application %}
-        <div>Application for {{ application.firstName }} {{ application.lastName }}</div>
-    {% endif %}
-    <form action="">weee form</form>
+    <h1>Create new Application</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('home') }}">back to menu</a>
 {% endblock %}
