@@ -59,4 +59,18 @@ class ApplicationController extends Controller
 
         return $this->redirectToRoute('application_index');
     }
+
+    /**
+     * @Route("/etape-suivante/{id}", name="application_next", methods="PUT")
+     */
+    public function next(Request $request, Application $application): Response
+    {
+        if ($this->isCsrfTokenValid('next'.$application->getId(), $request->request->get('_token'))) {
+            $application->setState($application->getState() + 1);
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('application_index');
+    }
 }

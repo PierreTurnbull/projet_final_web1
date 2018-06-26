@@ -51,14 +51,26 @@
 
     <a href="{{ path('application_index') }}">back to list</a>
 
+    {# faire passer la candidature à l'étape suivante #}
+    {% if application.state < 2 %}
+        <form method="post" action="{{ path('application_next', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to set this application to the next step?');">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="_token" value="{{ csrf_token('next' ~ application.id) }}">
+            <button class="btn">Faire passer cette candidature à l'étape {{ application.state + 1 }}</button>
+        </form>
+    {% endif %}
+
+    {# refuser la candidature #}
     {% if application.state != -1 %}
-        {# refuser la candidature #}
         <form method="post" action="{{ path('application_refuse', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to refuse this application?');">
             <input type="hidden" name="_method" value="PUT">
             <input type="hidden" name="_token" value="{{ csrf_token('refuse' ~ application.id) }}">
             <button class="btn">Refuser cette candidature</button>
         </form>
-        {# accepter la candidature #}
+    {% endif %}
+
+    {# accepter la candidature #}
+    {% if application.state != -1 and application.state == 2 %}
         <form method="post" action="{{ path('application_accept', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to accept this application?');">
             <input type="hidden" name="_method" value="PUT">
             <input type="hidden" name="_token" value="{{ csrf_token('accept' ~ application.id) }}">
