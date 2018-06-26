@@ -57,11 +57,6 @@ class Application
     private $job;
 
     /**
-     * @ORM\Column(type="array", nullable=true)
-     */
-    private $dayTime;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $drugs;
@@ -175,18 +170,6 @@ class Application
     public function setJAPD(string $JAPD): self
     {
         $this->JAPD = $JAPD;
-
-        return $this;
-    }
-
-    public function getDayTime(): ?string
-    {
-        return $this->dayTime;
-    }
-
-    public function setDayTime(?string $dayTime): self
-    {
-        $this->dayTime = $dayTime;
 
         return $this;
     }

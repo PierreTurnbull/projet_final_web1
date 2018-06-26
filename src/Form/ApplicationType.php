@@ -20,7 +20,6 @@ class ApplicationType extends AbstractType
             ->add('ZIPCode')
             ->add('town')
             ->add('job')
-            ->add('dayTime')
             ->add('drugs')
         ;
     }
