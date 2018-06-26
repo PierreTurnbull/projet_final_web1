@@ -4,58 +4,61 @@
 {# {% block title %}Hello {{ controllerName }}!{% endblock %} #}
 
 {% block body %}
-    <div class="grid-container" style="margin-top:100px;">
+<div class="background">
+    <div class="grid-container">
         <div class="recrutement grid-x">
-            <h1 class="title">Le parcours de recrutement</h1>
+            <h1 class="title small-12">Le parcours de recrutement</h1>
 
-            <section class="submit space-margin cell small-12 large-12">
+            <section class="margin_bottom submit cell small-12 large-12">
                 <div class="align-middle align-spaced grid-x">
-                    <div class="container-submit cell small-12 large-3">
-                        <span class="number-submit">1</span>
-                        <div class="container-img">
+                    <div class="submit_container cell small-12 large-3">
+                        <span class="submit_number">1</span>
+                        <div class="submit_img">
                             <img src="build/img/submit.svg" alt="rejognez-nous">
                         </div>
-                        <h2 class="title">Je soumets mon application</h2>
+                        <h2 class="title_section submit_title">Je soumets mon application</h2>
                     </div>
-                    <div class="text-submit cell small-12 large-3">
+                    <div class="submit_text cell small-12 large-3">
                         <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-                        <input type="submit" name="rejoindre" id="sumbit-army" value="REJOIGNEZ-NOUS">
+                        <input type="submit" name="rejoindre" id="sumbit_text_input" value="REJOIGNEZ-NOUS">
                     </div>
                 </div>
             </section>
 
-            <section class="space-margin rendez-vous cell small-12 large-12">
-                <div class="align-middle grid-x">
-                    <div class="text-submit cell small-12 large-6">
+            <section class="margin_bottom rendez-vous cell small-12 large-12">
+                <div class="align-middle align-spaced grid-x">
+                    <div class="submit_text cell small-12 large-3">
                         <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
                     </div>
-                    <div class="container-submit cell small-12 large-6">
-                        <span class="number-submit">2</span>
-                        <div class="container-img">
-                            <img src="build/img/calandar.svg" alt="prendre rendez-vous">
+                    <div class="submit_container cell small-12 large-3">
+                        <span class="submit_number">2</span>
+                        <div class="submit_img">
+                            <img src="build/img/calendar.svg" alt="prendre rendez-vous">
                         </div>
-                        <h2 class="title">J'ai rdv avec un officier</h2>
+                        <h2 class="title_section submit_title">J'ai rdv avec un officier</h2>
                     </div>
                 </div>
             </section>
 
-            <section class="space-margin tests cell small-12 large-12">
-                <div class="align-middle grid-x">
-                    <div class="container-submit cell small-12 large-6">
-                        <span class="number-submit">3</span>
-                        <div class="container-img">
+            <section class="margin_bottom tests cell smal l-12 large-12">
+                <div class="align-middle align-spaced grid-x">
+                    <div class="tests_container cell small-12 large-3">
+                        <span class="tests_number">3</span>
+                        <div class="test_img">
                             <img src="build/img/tests.svg" alt="Tests">
                         </div>
-                        <h2 class="title">Je passe les tests</h2>
+                        <h2 class="title_section tests_title">Je passe les tests</h2>
                     </div>
-                    <div class="text-submit cell small-12 large-6">
+                    <div class="tests_text cell small-12 large-3">
                         <p>lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
                     </div>
                 </div>
             </section>
-            <div class="satelite-img">
+            {# <div class="satelite_img">
                 <img src="build/img/satellite.svg" alt="Satellite's amry">
-            </div>
+            </div> #}
         </div>
     </div>
+</div>
+
 {% endblock %}

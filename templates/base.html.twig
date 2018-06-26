@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <style>
@@ -15,11 +16,7 @@
             <div class="grid-container">
                 <div class="grid-x align-justify align-middle">
                 <div class="Navigation__logo cell small-5 large-3">
-                    <router-link
-                        to="/"
-                        @click.native="hideMenu">
-                        <a class="Navigation__logoLink">CSAF</a>
-                    </router-link>
+                    <a href="/" class="Navigation__logoLink">CSAF</a>
                 </div>      
                 
                 <input type="checkbox"  id="burger" v-model="isChecked" @change="disableScrollify" class="Navigation__toggle cell small-1">
@@ -29,31 +26,32 @@
                     <ul class="Navigation__menu grid-x align-right">
                     
                         <li class="Navigation__item" >
-                            <a class="Navigation__itemLink">Découvrir</a>
+                            <a href="/decouvrir-le-corps-spatial" class="Navigation__itemLink">Découvrir</a>
                         </li>
 
                         <li class="Navigation__item" >
-                            <a class="Navigation__itemLink">Actualités</a>
+                            <a href="/actualites" class="Navigation__itemLink">Actualités</a>
                         </li>
 
                         <li class="Navigation__item" >
-                            <a class="Navigation__itemLink">Métiers</a>
+                            <a href="/metiers" class="Navigation__itemLink">Métiers</a>
                         </li>
 
                         <li class="Navigation__item" >
-                            <a class="Navigation__itemLink">Processus de recrutement</a>
+                            <a href="/processus-de-recrutement" class="Navigation__itemLink">Processus de recrutement</a>
                         </li>
 
                         <li class="Navigation__item" >
-                            <a class="Navigation__itemLink">Engagez-vous</a>
+                            <a href="/engagez-vous" class="Navigation__itemLink">Engagez-vous</a>
                         </li>
 
                         <li class="Navigation__item" >
-                            <a class="Navigation__itemLink">Contactez-nous</a>
+                            <a href="/contactez-nous" class="Navigation__itemLink">Contactez-nous</a>
                         </li>
 
                         <li class="Navigation__item" >
-                            <a class="Navigation__itemLink">Mon compte</a>
+                            <a href="/login"
+                            class="Navigation__itemLink">Mon compte</a>
                         </li>
                     </ul> 
                 </nav>
@@ -61,7 +59,9 @@
             </div>
         </div>
         {% endblock %}
-        {% block body %}{% endblock %}
+        <div class="wrapper">
+            {% block body %}{% endblock %}
+        </div>
         {% block footer %}
             <footer>
                 this is the footer
