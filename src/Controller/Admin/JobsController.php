@@ -40,7 +40,7 @@ class JobsController extends Controller
             return $this->redirectToRoute('jobs_index');
         }
 
-        return $this->render('admin/jobs/new.html.twig', [
+        return $this->render('admin/jobs/index.html.twig', [
             'job' => $job,
             'form' => $form->createView(),
         ]);
