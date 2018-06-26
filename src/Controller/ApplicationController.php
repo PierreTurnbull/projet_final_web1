@@ -57,18 +57,4 @@ class ApplicationController extends Controller
             'form' => $form->createView(),
         ]);
     }
-
-    /**
-     * @Route("/{id}", name="application_delete", methods="DELETE")
-     */
-    public function delete(Request $request, Application $application): Response
-    {
-        if ($this->isCsrfTokenValid('delete'.$application->getId(), $request->request->get('_token'))) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($application);
-            $em->flush();
-        }
-
-        return $this->redirectToRoute('application_index');
-    }
 }

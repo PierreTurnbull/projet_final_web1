@@ -31,6 +31,7 @@ CREATE TABLE `application` (
   `address` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `job` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `state` int(11) NOT NULL,
+  `accepted` tinyint(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -41,7 +42,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (1,'aa','aaa','a','a','a','a',1),(2,'abbbbb','a','a','a','a','a',1),(3,'c','c','c','c','c','c',2),(4,'i','i','i','i','i','i',1);
+INSERT INTO `application` VALUES (1,'state1','aaa','a','a','a','a',1,0),(2,'accepted','a','a','a','a','a',-1,1),(3,'state2','c','c','c','c','c',2,0),(4,'refused','i','i','i','i','i',-1,0);
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -103,7 +104,7 @@ CREATE TABLE `migration_versions` (
 
 LOCK TABLES `migration_versions` WRITE;
 /*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
-INSERT INTO `migration_versions` VALUES ('20180621152939'),('20180621171214'),('20180622133446'),('20180624173007'),('20180625104503'),('20180625114127'),('20180625114938'),('20180625115033'),('20180626092103'),('20180626093722'),('20180626094112'),('20180626135647'),('20180626141720');
+INSERT INTO `migration_versions` VALUES ('20180621152939'),('20180621171214'),('20180622133446'),('20180624173007'),('20180625104503'),('20180625114127'),('20180625114938'),('20180625115033'),('20180626092103'),('20180626093722'),('20180626094112'),('20180626135647'),('20180626141720'),('20180626142457');
 /*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -172,4 +173,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-26 16:20:22
+-- Dump completed on 2018-06-26 16:27:13

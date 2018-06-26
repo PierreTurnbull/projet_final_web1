@@ -30,4 +30,33 @@ class ApplicationController extends Controller
     {
         return $this->render('admin/application/show.html.twig', ['application' => $application]);
     }
+
+    /**
+     * @Route("/refuser/{id}", name="application_refuse", methods="PUT")
+     */
+    public function refuse(Request $request, Application $application): Response
+    {
+        if ($this->isCsrfTokenValid('refuse'.$application->getId(), $request->request->get('_token'))) {
+            $application->setState(-1);
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('application_index');
+    }
+
+    /**
+     * @Route("/accepter/{id}", name="application_accept", methods="PUT")
+     */
+    public function accept(Request $request, Application $application): Response
+    {
+        if ($this->isCsrfTokenValid('accept'.$application->getId(), $request->request->get('_token'))) {
+            $application->setState(-1);
+            $application->setAccepted(true);
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('application_index');
+    }
 }

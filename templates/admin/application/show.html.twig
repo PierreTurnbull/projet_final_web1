@@ -37,14 +37,30 @@
             </tr>
             <tr>
                 <th>State</th>
-                <td>{{ application.state }}</td>
+                <td>
+                    {{ application.state }}
+                    {% if application.accepted == 0 and application.state == -1 %}
+                        refusée
+                    {% elseif application.state == -1 %}
+                        acceptée
+                    {% endif %}
+                </td>
             </tr>
         </tbody>
     </table>
 
     <a href="{{ path('application_index') }}">back to list</a>
 
-    <a href="{{ path('application_edit', {'id': application.id}) }}">edit</a>
-
-    {{ include('application/_delete_form.html.twig') }}
+    {# refuser la candidature #}
+    <form method="post" action="{{ path('application_refuse', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to refuse this application?');">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="hidden" name="_token" value="{{ csrf_token('refuse' ~ application.id) }}">
+        <button class="btn">Refuser cette candidature</button>
+    </form>
+    {# accepter la candidature #}
+    <form method="post" action="{{ path('application_accept', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to accept this application?');">
+        <input type="hidden" name="_method" value="PUT">
+        <input type="hidden" name="_token" value="{{ csrf_token('accept' ~ application.id) }}">
+        <button class="btn">Accepter cette candidature</button>
+    </form>
 {% endblock %}
