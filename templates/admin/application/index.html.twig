@@ -30,14 +30,12 @@
                 <td>{{ application.address }}</td>
                 <td>{{ application.job }}</td>
                 <td>
-                    <td>
-                        {{ application.state }}
-                        {% if application.accepted == 0 and application.state == -1 %}
-                            refusée
-                        {% elseif application.state == -1 %}
-                            acceptée
-                        {% endif %}
-                    </td>
+                    {{ application.state }}
+                    {% if application.accepted == 0 and application.state == -1 %}
+                        refusée
+                    {% elseif application.state == -1 %}
+                        acceptée
+                    {% endif %}
                 </td>
                 <td>
                     <a href="{{ path('application_show', {'id': application.id}) }}">show</a>
