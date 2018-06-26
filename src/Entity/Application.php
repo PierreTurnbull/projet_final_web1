@@ -51,9 +51,15 @@ class Application
      */
     private $state;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $accepted;
+
     public function __construct()
     {
-        $this->state = 1;
+        $this->state = 0;
+        $this->accepted = false;
     }
 
     public function getId()
@@ -141,6 +147,18 @@ class Application
     public function setState(int $state): self
     {
         $this->state = $state;
+
+        return $this;
+    }
+
+    public function getAccepted(): ?bool
+    {
+        return $this->accepted;
+    }
+
+    public function setAccepted(bool $accepted): self
+    {
+        $this->accepted = $accepted;
 
         return $this;
     }
