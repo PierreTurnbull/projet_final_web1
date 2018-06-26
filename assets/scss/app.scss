@@ -1,13 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Allerta+Stencil');
-@import url('https://fonts.googleapis.com/css?family=Rajdhani:400,600,700');
-@import './foundation.min';
+@import url('https://fonts.googleapis.com/css?family=Rajdhani:400,500,600');
+@import 'foundation.min';
 body {
   background: #000000;
   color: #ffffff;
   height: 100vh;
   overflow-x: hidden;
   overflow: auto;
+  font-size: 16px;
   font-family: 'Rajdhani', sans-serif;
+}
+
+.wrapper {
+  padding-top: 80px;
+}
+
+.title {
+  text-align: center;
+  padding: 2em 0;
+  color: #ffffff;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  line-height: 1;
+  font-size: 45px;
+  font-family: 'Allerta Stencil', sans-serif;
+  @media screen and (min-width: 64em) {
+    font-size: 68px;
+  }
 }
 
 .Navigation {
@@ -35,13 +54,13 @@ body {
     left: 0;
     padding: 0;
     margin: 0;
-    height: 100vh;
+    height: 0;
     z-index: -2;
     opacity: 0;
     width: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    transition: opacity 0.26s ease-in;
+    transition: opacity 0.26s ease-in, height 0.26s 0.2s;
     background: rgba(0, 0, 0, 0.9);
     @media screen and (min-width: 64em) {
       overflow: auto;
@@ -54,6 +73,7 @@ body {
   &__toggle {
     display: none;
     &:checked~.Navigation__menuContainer {
+      height: 100vh;
       z-index: 7;
       opacity: 1;
     }
@@ -284,6 +304,5 @@ body {
   }
 }
 
-// PARTIE DECOUVRIR - BILLAL
-
 @import './description.scss';
+@import 'article';
