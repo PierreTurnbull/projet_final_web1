@@ -52,7 +52,7 @@
     <a href="{{ path('application_index') }}">back to list</a>
 
     {# faire passer la candidature à l'étape suivante #}
-    {% if application.state < 2 %}
+    {% if application.state < 2 and application.state != -1 %}
         <form method="post" action="{{ path('application_next', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to set this application to the next step?');">
             <input type="hidden" name="_method" value="PUT">
             <input type="hidden" name="_token" value="{{ csrf_token('next' ~ application.id) }}">
