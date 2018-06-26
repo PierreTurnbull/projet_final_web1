@@ -1,0 +1,64 @@
+.Article {
+  margin-bottom: 5em;
+  a {
+    color: #ffffff;
+  }
+  &__imgContainer {
+    position: relative;
+    &:hover .Article__overlay {
+      opacity: 1;
+    }
+  }
+  &__imgLink {
+    display: block;
+    width: 100%;
+    padding-top: 66.66%;
+    position: relative;
+    overflow: hidden;
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+  }
+  &__info {
+    padding: 1em 0;
+  }
+  &__title {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase; //font-family: 'Allerta Stencil', sans-serif;
+  }
+  &__author {
+    transition: 0.26s;
+    &:hover {
+      font-weight: 600;
+    }
+  }
+  &__title,
+  &__author {
+    padding: 0;
+    margin: 0;
+  }
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: 0.26s;
+    background: rgba(7, 72, 135, 0.5);
+    &Text {
+      margin: 0;
+      padding: 0;
+      font-size: 25px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+  }
+}
