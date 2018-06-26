@@ -1,10 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello {{ controller_name }}!{% endblock %}
+{% block title %}New Application{% endblock %}
 
 {% block body %}
-    <div class="example-wrapper">
-        <p>this is the content of the "<span></span>" page</p>
-        <script>document.querySelector("span").textContent = "{{ controller_name }}".replace("Controller", "");</script>
-    </div>
+    <h1>Create new Application</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <button class="btn">{{ button_label|default('Save') }}</button>
+    {{ form_end(form) }}
+
+    <a href="{{ path('application_index') }}">back to list</a>
 {% endblock %}
