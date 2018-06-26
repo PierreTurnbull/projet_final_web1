@@ -16,14 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class ApplicationController extends Controller
 {
     /**
-     * @Route("/e", name="application_index", methods="GET")
-     */
-    public function index(ApplicationRepository $applicationRepository): Response
-    {
-        return $this->render('application/index.html.twig', ['applications' => $applicationRepository->findAll()]);
-    }
-
-    /**
      * @Route("/", name="application_new", methods="GET|POST")
      */
     public function new(Request $request): Response
@@ -40,18 +32,10 @@ class ApplicationController extends Controller
             return $this->redirectToRoute('home');
         }
 
-        return $this->render('application/new.html.twig', [
+        return $this->render('application/index.html.twig', [
             'application' => $application,
             'form' => $form->createView(),
         ]);
-    }
-
-    /**
-     * @Route("/{id}", name="application_show", methods="GET")
-     */
-    public function show(Application $application): Response
-    {
-        return $this->render('application/show.html.twig', ['application' => $application]);
     }
 
     /**
