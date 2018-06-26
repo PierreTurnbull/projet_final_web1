@@ -1,0 +1,80 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Application{% endblock %}
+
+{% block body %}
+    <h1>Application</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ application.id }}</td>
+            </tr>
+            <tr>
+                <th>FirstName</th>
+                <td>{{ application.firstName }}</td>
+            </tr>
+            <tr>
+                <th>LastName</th>
+                <td>{{ application.lastName }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ application.email }}</td>
+            </tr>
+            <tr>
+                <th>Phone</th>
+                <td>{{ application.phone }}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>{{ application.address }}</td>
+            </tr>
+            <tr>
+                <th>Job</th>
+                <td>{{ application.job }}</td>
+            </tr>
+            <tr>
+                <th>State</th>
+                <td>
+                    {{ application.state }}
+                    {% if application.accepted == 0 and application.state == -1 %}
+                        refusée
+                    {% elseif application.state == -1 %}
+                        acceptée
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('application_index') }}">back to list</a>
+
+    {# faire passer la candidature à l'étape suivante #}
+    {% if application.state < 2 and application.state != -1 %}
+        <form method="post" action="{{ path('application_next', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to set this application to the next step?');">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="_token" value="{{ csrf_token('next' ~ application.id) }}">
+            <button class="btn">Faire passer cette candidature à l'étape {{ application.state + 1 }}</button>
+        </form>
+    {% endif %}
+
+    {# refuser la candidature #}
+    {% if application.state != -1 %}
+        <form method="post" action="{{ path('application_refuse', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to refuse this application?');">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="_token" value="{{ csrf_token('refuse' ~ application.id) }}">
+            <button class="btn">Refuser cette candidature</button>
+        </form>
+    {% endif %}
+
+    {# accepter la candidature #}
+    {% if application.state != -1 and application.state == 2 %}
+        <form method="post" action="{{ path('application_accept', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to accept this application?');">
+            <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="_token" value="{{ csrf_token('accept' ~ application.id) }}">
+            <button class="btn">Accepter cette candidature</button>
+        </form>
+    {% endif %}
+{% endblock %}

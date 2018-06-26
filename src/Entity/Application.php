@@ -32,34 +32,35 @@ class Application
     private $email;
 
     /**
-     * @ORM\Column(type="string", length=10), unique=true
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $phone;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="string", length=128, nullable=true)
      */
-    private $street;
-
-    /**
-     * @ORM\Column(type="string", length=5)
-     */
-    private $ZIPCode;
+    private $address;
 
     /**
      * @ORM\Column(type="string", length=32)
      */
-    private $town;
+    private $job;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="integer")
      */
-    private $job;
+    private $state;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $drugs;
+    private $accepted;
+
+    public function __construct()
+    {
+        $this->state = 0;
+        $this->accepted = false;
+    }
 
     public function getId()
     {
@@ -107,45 +108,21 @@ class Application
         return $this->phone;
     }
 
-    public function setPhone(string $phone): self
+    public function setPhone(?string $phone): self
     {
         $this->phone = $phone;
 
         return $this;
     }
 
-    public function getStreet(): ?string
+    public function getAddress(): ?string
     {
-        return $this->street;
+        return $this->address;
     }
 
-    public function setStreet(string $street): self
+    public function setAddress(?string $address): self
     {
-        $this->street = $street;
-
-        return $this;
-    }
-
-    public function getZIPCode(): ?string
-    {
-        return $this->ZIPCode;
-    }
-
-    public function setZIPCode(string $ZIPCode): self
-    {
-        $this->ZIPCode = $ZIPCode;
-
-        return $this;
-    }
-
-    public function getTown(): ?string
-    {
-        return $this->town;
-    }
-
-    public function setTown(string $town): self
-    {
-        $this->town = $town;
+        $this->address = $address;
 
         return $this;
     }
@@ -162,26 +139,26 @@ class Application
         return $this;
     }
 
-    public function getJAPD(): ?string
+    public function getState(): ?int
     {
-        return $this->JAPD;
+        return $this->state;
     }
 
-    public function setJAPD(string $JAPD): self
+    public function setState(int $state): self
     {
-        $this->JAPD = $JAPD;
+        $this->state = $state;
 
         return $this;
     }
-
-    public function getDrugs(): ?bool
+  
+    public function getAccepted(): ?bool
     {
-        return $this->drugs;
+        return $this->accepted;
     }
 
-    public function setDrugs(bool $drugs): self
+    public function setAccepted(bool $accepted): self
     {
-        $this->drugs = $drugs;
+        $this->accepted = $accepted;
 
         return $this;
     }

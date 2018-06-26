@@ -40,7 +40,7 @@ class NewsController extends Controller
             return $this->redirectToRoute('news_index');
         }
 
-        return $this->render('admin/news/new.html.twig', [
+        return $this->render('admin/news/index.html.twig', [
             'news' => $news,
             'form' => $form->createView(),
         ]);

@@ -16,11 +16,8 @@ class ApplicationType extends AbstractType
             ->add('lastName')
             ->add('email')
             ->add('phone')
-            ->add('street')
-            ->add('ZIPCode')
-            ->add('town')
+            ->add('address')
             ->add('job')
-            ->add('drugs')
         ;
     }
 

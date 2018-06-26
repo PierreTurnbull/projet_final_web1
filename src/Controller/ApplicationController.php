@@ -4,15 +4,19 @@ namespace App\Controller;
 
 use App\Entity\Application;
 use App\Form\ApplicationType;
-use Symfony\Component\Routing\Annotation\Route;
+use App\Repository\ApplicationRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/engagez-vous")
+ */
 class ApplicationController extends Controller
 {
     /**
-     * @Route("/engagez-vous", name="application", methods="GET|POST")
+     * @Route("/", name="application_new", methods="GET|POST")
      */
     public function new(Request $request): Response
     {
