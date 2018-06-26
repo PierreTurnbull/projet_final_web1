@@ -27,7 +27,7 @@ class Application
     private $lastName;
 
     /**
-     * @ORM\Column(type="string", length=64)
+     * @ORM\Column(type="string", length=64, unique=true)
      */
     private $email;
 
@@ -150,7 +150,7 @@ class Application
 
         return $this;
     }
-
+  
     public function getAccepted(): ?bool
     {
         return $this->accepted;

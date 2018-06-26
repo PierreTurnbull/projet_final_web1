@@ -37,4 +37,5 @@ class ApplicationController extends Controller
             'form' => $form->createView(),
         ]);
     }
+
 }
