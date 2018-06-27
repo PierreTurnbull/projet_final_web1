@@ -17,15 +17,15 @@ body {
 
 .title {
   text-align: center;
-  padding: 2em 0;
+  padding: 1em 0;
   color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 1rem;
   line-height: 1;
-  font-size: 45px;
-  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 40px;
+  font-weight: bold;
   @media screen and (min-width: 64em) {
-    font-size: 68px;
+    font-size: 40px;
   }
 }
 
@@ -72,16 +72,16 @@ body {
   }
   &__toggle {
     display: none;
-    &:checked~.Navigation__menuContainer {
+    &:checked ~ .Navigation__menuContainer {
       height: 100vh;
       z-index: 7;
       opacity: 1;
     }
-    &:checked~.Navigation__menuContainer .Navigation__menu {
+    &:checked ~ .Navigation__menuContainer .Navigation__menu {
       transform: translateX(0%);
       opacity: 1;
     }
-    &:checked~.Navigation__menuContainer .Navigation__menu .Navigation__item {
+    &:checked ~ .Navigation__menuContainer .Navigation__menu .Navigation__item {
       opacity: 1;
     }
   }
@@ -172,27 +172,28 @@ body {
 	 styles and transitions
 */
 
-.Navigation__toggleLabel>span,
-.Navigation__toggleLabel>span::before,
-.Navigation__toggleLabel>span::after {
+.Navigation__toggleLabel > span,
+.Navigation__toggleLabel > span::before,
+.Navigation__toggleLabel > span::after {
   content: '';
   width: 2.5em;
   height: 0.3em;
   display: block;
   position: relative;
-  transition: background-color 0s ease-in-out 0.2s, top 0.1s ease-in-out 0.25s, transform 0.1s ease-in-out 0.1s;
+  transition: background-color 0s ease-in-out 0.2s, top 0.1s ease-in-out 0.25s,
+    transform 0.1s ease-in-out 0.1s;
   overflow: visible;
 }
 
 /* To increase size of label */
 
-.Navigation__toggleLabel>span {
+.Navigation__toggleLabel > span {
   background-color: white;
 }
 
 /* Positioning top bar */
 
-.Navigation__toggleLabel>span::before {
+.Navigation__toggleLabel > span::before {
   top: -0.6em;
   right: -0.6em;
   width: 75%;
@@ -201,7 +202,7 @@ body {
 
 /* Positioning bottom bar */
 
-.Navigation__toggleLabel>span::after {
+.Navigation__toggleLabel > span::after {
   width: 75%;
   right: -0.6em;
   top: 0.3em;
@@ -213,25 +214,26 @@ body {
 	 when checked
 */
 
-.Navigation__toggle:checked+.Navigation__toggleLabel>span,
-.Navigation__toggle:checked+.Navigation__toggleLabel>span::before,
-.Navigation__toggle:checked+.Navigation__toggleLabel>span::after {
-  transition: background-color 0s linear 0.1s, top 0.1s linear 0s, transform 0.1s linear 0.1s;
+.Navigation__toggle:checked + .Navigation__toggleLabel > span,
+.Navigation__toggle:checked + .Navigation__toggleLabel > span::before,
+.Navigation__toggle:checked + .Navigation__toggleLabel > span::after {
+  transition: background-color 0s linear 0.1s, top 0.1s linear 0s,
+    transform 0.1s linear 0.1s;
 }
 
 /* Styles when checked */
 
-.Navigation__toggle:checked+.Navigation__toggleLabel>span {
+.Navigation__toggle:checked + .Navigation__toggleLabel > span {
   background-color: transparent;
 }
 
-.Navigation__toggle:checked+.Navigation__toggleLabel>span::before {
+.Navigation__toggle:checked + .Navigation__toggleLabel > span::before {
   top: 0rem;
   transform: rotate(45deg);
   background-color: white;
 }
 
-.Navigation__toggle:checked+.Navigation__toggleLabel>span::after {
+.Navigation__toggle:checked + .Navigation__toggleLabel > span::after {
   top: -0.3em;
   transform: rotate(-45deg);
   background-color: white;
@@ -246,10 +248,28 @@ body {
   }
 }
 
+.PageHeader {
+  height: 40vh;
+  background: #000;
+  background: url('/img/blue.png') center center no-repeat;
+  background-size: contain;
+}
+
+.edito {
+  height: auto;
+  text-align: center;
+  margin-bottom: 2em;
+  @media screen and (min-width: 64em) {
+    height: 50vh;
+    text-align: left;
+  }
+}
+
 .header {
   position: relative;
   overflow: hidden;
   height: 100vh;
+  background: #000;
   &__background {
     position: absolute;
     top: 0;
@@ -304,9 +324,8 @@ body {
   }
 }
 
-
-
 /* @import 'recrutement'; */
+
 @import './description.scss';
 @import './jobs.scss';
 @import 'article';
