@@ -4,11 +4,13 @@ namespace App\Controller\Admin;
 
 use App\Entity\Application;
 use App\Form\ApplicationType;
+use App\Form\AdminApplicationType;
 use App\Repository\ApplicationRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * @Route("/admin/candidatures")
@@ -24,11 +26,26 @@ class ApplicationController extends Controller
     }
 
     /**
-     * @Route("/{id}", name="application_show", methods="GET")
+     * @Route("/{id}", name="application_show", methods="GET|POST")
      */
-    public function show(Application $application): Response
+    public function show(Request $request, Application $application): Response
     {
-        return $this->render('admin/application/show.html.twig', ['application' => $application]);
+        $form = $this->createForm(AdminApplicationType::class, $application);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('application_show', [
+                'id' => $application->getId()
+            ]);
+        }
+
+        return $this->render('admin/application/show.html.twig', [
+            'application' => $application,
+            'form' => $form->createView(),
+            'currentDate' => new \DateTime()
+        ]);
     }
 
     /**
