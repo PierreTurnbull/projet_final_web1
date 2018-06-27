@@ -58,16 +58,16 @@ body {
   }
   &__toggle {
     display: none;
-    &:checked ~ .Navigation__menuContainer {
+    &:checked~.Navigation__menuContainer {
       height: 100vh;
       z-index: 7;
       opacity: 1;
     }
-    &:checked ~ .Navigation__menuContainer .Navigation__menu {
+    &:checked~.Navigation__menuContainer .Navigation__menu {
       transform: translateX(0%);
       opacity: 1;
     }
-    &:checked ~ .Navigation__menuContainer .Navigation__menu .Navigation__item {
+    &:checked~.Navigation__menuContainer .Navigation__menu .Navigation__item {
       opacity: 1;
     }
   }
@@ -158,28 +158,27 @@ body {
 	 styles and transitions
 */
 
-.Navigation__toggleLabel > span,
-.Navigation__toggleLabel > span::before,
-.Navigation__toggleLabel > span::after {
+.Navigation__toggleLabel>span,
+.Navigation__toggleLabel>span::before,
+.Navigation__toggleLabel>span::after {
   content: '';
   width: 2.5em;
   height: 0.3em;
   display: block;
   position: relative;
-  transition: background-color 0s ease-in-out 0.2s, top 0.1s ease-in-out 0.25s,
-    transform 0.1s ease-in-out 0.1s;
+  transition: background-color 0s ease-in-out 0.2s, top 0.1s ease-in-out 0.25s, transform 0.1s ease-in-out 0.1s;
   overflow: visible;
 }
 
 /* To increase size of label */
 
-.Navigation__toggleLabel > span {
+.Navigation__toggleLabel>span {
   background-color: white;
 }
 
 /* Positioning top bar */
 
-.Navigation__toggleLabel > span::before {
+.Navigation__toggleLabel>span::before {
   top: -0.6em;
   right: -0.6em;
   width: 75%;
@@ -188,7 +187,7 @@ body {
 
 /* Positioning bottom bar */
 
-.Navigation__toggleLabel > span::after {
+.Navigation__toggleLabel>span::after {
   width: 75%;
   right: -0.6em;
   top: 0.3em;
@@ -200,26 +199,25 @@ body {
 	 when checked
 */
 
-.Navigation__toggle:checked + .Navigation__toggleLabel > span,
-.Navigation__toggle:checked + .Navigation__toggleLabel > span::before,
-.Navigation__toggle:checked + .Navigation__toggleLabel > span::after {
-  transition: background-color 0s linear 0.1s, top 0.1s linear 0s,
-    transform 0.1s linear 0.1s;
+.Navigation__toggle:checked+.Navigation__toggleLabel>span,
+.Navigation__toggle:checked+.Navigation__toggleLabel>span::before,
+.Navigation__toggle:checked+.Navigation__toggleLabel>span::after {
+  transition: background-color 0s linear 0.1s, top 0.1s linear 0s, transform 0.1s linear 0.1s;
 }
 
 /* Styles when checked */
 
-.Navigation__toggle:checked + .Navigation__toggleLabel > span {
+.Navigation__toggle:checked+.Navigation__toggleLabel>span {
   background-color: transparent;
 }
 
-.Navigation__toggle:checked + .Navigation__toggleLabel > span::before {
+.Navigation__toggle:checked+.Navigation__toggleLabel>span::before {
   top: 0rem;
   transform: rotate(45deg);
   background-color: white;
 }
 
-.Navigation__toggle:checked + .Navigation__toggleLabel > span::after {
+.Navigation__toggle:checked+.Navigation__toggleLabel>span::after {
   top: -0.3em;
   transform: rotate(-45deg);
   background-color: white;
@@ -236,6 +234,36 @@ body {
   border-radius: 6px;
   &:hover {
     color: #F7F5FB;
+  }
+}
+
+.PageFooter {
+  padding: 2em 0 0 0;
+  background-color: #084887;
+  text-align: center;
+  .footer_menu {
+    display: inline-block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    .footer_item {
+      margin-right: 2em;
+      list-style: none;
+      display: inline-block;
+      &:hover {
+        fill: #F7F5FB;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .footer_mentions {
+    display: inline-block;
+    color: #F7F5FB;
+    font-weight: 500;
+    &:hover {
+      color: #F7F5FB;
+    }
   }
 }
 
