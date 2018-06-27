@@ -1,0 +1,17 @@
+.fiche{
+  &-img{
+    max-width: 643px;
+    max-height: 279px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+  }
+  &-title{
+    margin-bottom: 20px;
+  }
+  &-grade-text{
+    margin-top: 20px;
+  }
+  &-span-padding{
+    padding-left: 20px;
+  }
+}
