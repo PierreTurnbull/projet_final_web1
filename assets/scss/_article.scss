@@ -1,6 +1,8 @@
 .Article,
 .ArticlePage {
-  margin-bottom: 5em;
+  @media screen and (min-width: 64em) {
+    margin-bottom: 10vh;
+  }
   a {
     color: #ffffff;
   }
@@ -61,6 +63,7 @@
       font-size: 25px;
       text-transform: uppercase;
       font-weight: 600;
+      text-align: center;
     }
   }
   &__content {

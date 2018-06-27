@@ -5,15 +5,29 @@
 {% block body %}
 <div class="grid-container">
     <div class="grid-x">
-        <h1 class="title small-12">
-            L'actualité
-        </h1>
+        <div class="edito grid-x grid-padding-x align-middle">
+            <div class="cell small-12 medium-6">
+                <h1 class="edito__title small-12">
+                L'actualité
+                </h1>
+            </div>
 
-        <div class="cell small-12 medium-6">
-            <div class="grid-x align-center">
-                <div class="Article grid-x align-middle small-12 medium-6">
+            <div class="cell small-12 medium-6">
+                <p class="edito__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolore itaque sint porro sed excepturi voluptatum obcaecati tempora veritatis sunt aspernatur ad, id quae rem ullam, magni non a officiis?</p>
+            </div>
+        </div>
+
+        {% for article in articleList %}
+        {% if loop.index % 2 %}
+            {% set item_classes = '' %}
+        {% else %}
+            {% set item_classes = 'medium-offset-2' %}
+        {% endif %}
+        <div class="cell small-12 medium-5 {{ item_classes }} ">
+            <div class="grid-x grid-padding-x align-center">
+                <div class="Article grid-x align-middle small-12 medium-12">
                     <div class="Article__imgContainer small-5 medium-12">
-                        <a class="Article__imgLink" href="#">
+                        <a class="Article__imgLink" href="/actualites/{{ article.id }}">
                             <img src="https://fakeimg.pl/250x500/" alt="" class="Article__img">
                             <div class="Article__overlay grid-x align-center-middle">
                                 <p class="Article__overlayText">Lire l'article</p>
@@ -21,70 +35,15 @@
                         </a>
                     </div>
                     <div class="Article__info small-6 small-offset-1 medium-offset-0 medium-12">
-                        <h2 class="Article__title"><a href="#">Un titre d'article</a></h2>
+                        <h2 class="Article__title"><a href="/actualites/{{ article.id }}">{{ article.title }}</a></h2>
                         <a class="Article__author">Nom de l'auteur</a>
-                        <p class="Article__date">Publié le </p>
+                        <p class="Article__date">Publié le {{ article.creationDate ? article.creationDate|date('Y-m-d H:i:s') : '' }} </p>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="cell small-12 medium-6">
-            <div class="grid-x align-center">
-                <div class="Article grid-x align-middle small-12 medium-6">
-                    <div class="Article__imgContainer small-5 medium-12">
-                        <a class="Article__imgLink" href="#">
-                            <img src="https://fakeimg.pl/250x500/" alt="" class="Article__img">
-                            <div class="Article__overlay grid-x align-center-middle">
-                                <p class="Article__overlayText">Lire l'article</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="Article__info small-6 small-offset-1 medium-offset-0 medium-12">
-                        <h2 class="Article__title"><a href="#">Un titre d'article</a></h2>
-                        <a class="Article__author">Nom de l'auteur</a>
-                        <p class="Article__date">Publié le </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cell small-12 medium-6">
-            <div class="grid-x align-center">
-                <div class="Article grid-x align-middle small-12 medium-6">
-                    <div class="Article__imgContainer small-5 medium-12">
-                        <a class="Article__imgLink" href="#">
-                            <img src="https://fakeimg.pl/250x500/" alt="" class="Article__img">
-                            <div class="Article__overlay grid-x align-center-middle">
-                                <p class="Article__overlayText">Lire l'article</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="Article__info small-6 small-offset-1 medium-offset-0 medium-12">
-                        <h2 class="Article__title"><a href="#">Un titre d'article</a></h2>
-                        <a class="Article__author">Nom de l'auteur</a>
-                        <p class="Article__date">Publié le </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cell small-12 medium-6">
-            <div class="grid-x align-center">
-                <div class="Article grid-x align-middle small-12 medium-6">
-                    <div class="Article__imgContainer small-5 medium-12">
-                        <a class="Article__imgLink" href="#">
-                            <img src="https://fakeimg.pl/250x500/" alt="" class="Article__img">
-                            <div class="Article__overlay grid-x align-center-middle">
-                                <p class="Article__overlayText">Lire l'article</p>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="Article__info small-6 small-offset-1 medium-offset-0 medium-12">
-                        <h2 class="Article__title"><a href="#">Un titre d'article</a></h2>
-                        <a class="Article__author">Nom de l'auteur</a>
-                        <p class="Article__date">Publié le </p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
+
     </div>  
 </div>
 {% endblock %}

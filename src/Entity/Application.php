@@ -56,6 +56,11 @@ class Application
      */
     private $accepted;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\User", inversedBy="applications")
+     */
+    private $candidateID;
+
     public function __construct()
     {
         $this->state = 0;
@@ -159,6 +164,18 @@ class Application
     public function setAccepted(bool $accepted): self
     {
         $this->accepted = $accepted;
+
+        return $this;
+    }
+
+    public function getCandidateID(): ?User
+    {
+        return $this->candidateID;
+    }
+
+    public function setCandidateID(?User $candidateID): self
+    {
+        $this->candidateID = $candidateID;
 
         return $this;
     }

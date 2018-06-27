@@ -3,9 +3,65 @@
 {% block title %}Hello {{ controllerName }}!{% endblock %}
 
 {% block body %}
-    <div class="example-wrapper">
-        <p>this is the content of the "<span></span>" page</p>
-        <script>document.querySelector("span").textContent = "{{ controllerName }}".replace("Controller", "");</script>
+<section class="jobs">
+  <div class="grid-container">
+    <div class="grid-x align-center">
+      <div class="edito grid-x grid-padding-x align-middle">
+            <div class="cell small-12 medium-6">
+                <h1 class="edito__title small-12">
+                Emplois
+                </h1>
+            </div>
+
+            <div class="cell small-12 medium-6">
+                <p class="edito__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolore itaque sint porro sed excepturi voluptatum obcaecati tempora veritatis sunt aspernatur ad, id quae rem ullam, magni non a officiis?</p>
+            </div>
+        </div>
+
+    <div class="jobs-boxs-container small-12">
+      <div class="grid-x grid-padding-x align-justify">
+
+        <h3 class="jobs__categorieTitle cell small-12">Département de l'intelligence géospatiale</h3>
+
+        <div class=" cell small-12 medium-6 large-4 ">
+          <div class="large-12 jobs-box-container">
+            <p class="jobs-box-text">{{ job1 }}</p>
+          </div>
+        </div>
+        <div class=" cell small-12 medium-6 large-4 ">
+          <div class="large-12 jobs-box-container">
+            <p class="jobs-box-text">{{ job1 }}</p>
+          </div>
+        </div>
+        <div class=" cell small-12 medium-6 large-4 ">
+          <div class="large-12 jobs-box-container">
+            <p class="jobs-box-text">{{ job1 }}</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div>article list</div>
+    <div class="jobs-boxs-container small-12">
+      <div class="grid-x grid-padding-x align-justify">
+
+        <h3 class="jobs__categorieTitle cell small-12">Département de l'inginérie</h3>
+
+        <div class=" cell small-12 medium-6 large-4 ">
+          <a class="large-12 jobs-box-container">
+            <p class="jobs-box-text">{{ job1 }}</p>
+          </a>
+        </div>
+        <div class=" cell small-12 medium-6 large-4 ">
+          <a class="large-12 jobs-box-container">
+            <p class="jobs-box-text">{{ job1 }}</p>
+          </a>
+        </div>
+        <div class=" cell small-12 medium-6 large-4 ">
+          <a class="large-12 jobs-box-container">
+            <p class="jobs-box-text">{{ job1 }}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
