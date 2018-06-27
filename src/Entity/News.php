@@ -99,12 +99,12 @@ class News
         return $this;
     }
 
-    public function getThumbnail(): ?string
+    public function getThumbnail()
     {
         return $this->thumbnail;
     }
 
-    public function setThumbnail(string $thumbnail): self
+    public function setThumbnail($thumbnail)
     {
         $this->thumbnail = $thumbnail;
 

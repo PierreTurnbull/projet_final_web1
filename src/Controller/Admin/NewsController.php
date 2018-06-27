@@ -36,9 +36,9 @@ class NewsController extends Controller
         if ($form->isSubmitted() && $form->isValid()) {
             // $file stores the uploaded PDF file
             /** @var UploadedFile $file */
-            $file = $product->getThumbnail();
+            $file = $news->getThumbnail();
 
-            $fileName = $this->generateUniqueFileName() . '.' . $file->guessExtension();
+            $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();
 
             // moves the file to the directory where brochures are stored
             $file->move(
@@ -47,7 +47,7 @@ class NewsController extends Controller
             );
 
             // updates the 'thumbnail' property to store the file name instead of its contents
-            $product->setThumbnail($fileName);
+            $news->setThumbnail($fileName);
 
             $em = $this->getDoctrine()->getManager();
             $em->persist($news);
@@ -56,7 +56,7 @@ class NewsController extends Controller
             return $this->redirectToRoute('news_index');
         }
 
-        return $this->render('admin/news/index.html.twig', [
+        return $this->render('admin/news/new.html.twig', [
             'news' => $news,
             'form' => $form->createView(),
         ]);
