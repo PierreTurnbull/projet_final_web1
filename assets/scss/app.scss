@@ -6,7 +6,6 @@ body {
   color: #ffffff;
   height: 100vh;
   overflow-x: hidden;
-  overflow: auto;
   font-size: 16px;
   font-family: 'Rajdhani', sans-serif;
 }
@@ -235,7 +234,7 @@ body {
 }
 
 .PageHeader {
-  height: 40vh;
+  min-height: 40vh;
   background: #000;
   background: url('/img/blue.png') center center no-repeat;
   background-size: contain;
