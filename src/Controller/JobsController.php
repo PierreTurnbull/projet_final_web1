@@ -14,7 +14,13 @@ class JobsController extends Controller
     public function index()
     {
         return $this->render('jobs/index.html.twig', [
-            'controllerName' => 'JobsController'
+            'controllerName' => 'JobsController',
+            'job1' => 'ANALYSTE EN RENSEIGNEMENT GÉOSPATIAL',
+            'job2' => 'CARTOGRAPHE SPATIAL',
+            'job3' => 'ARCHITECTE DE DONNÉES RÉFÉRENCÉES',
+            'job4' => 'ANALYSTE EN RENSEIGNEMENT GÉOSPATIAL',
+            'job5' => 'TIDADIDADOUM',
+            'job6' => 'ABIBARATOUM'
         ]);
     }
 
