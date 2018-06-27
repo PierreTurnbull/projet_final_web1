@@ -51,19 +51,10 @@
                             </li>
 
                             <li class="Navigation__item" >
-                                <a href="/mon-compte"
-                                class="Navigation__itemLink">Mon compte</a>
+                                <a href="/mon-compte" class="Navigation__itemLink">Mon compte</a>
                             </li>
                         </ul> 
                     </nav>
-<!--                    
-                        <li class="Navigation__item" >
-                            <a href="/login"
-                            class="Navigation__itemLink">Mon compte</a>
-                        </li>
-                    </ul>
-                </nav>
--->
                 </div>
             </div>
         </div>
@@ -74,8 +65,39 @@
             {% block body %}{% endblock %}
         </div>
         {% block footer %}
-            <footer>
-                this is the footer
+            <footer class="PageFooter">
+                <div class="grid-container">
+                    <div class="grid-x align-center">
+                        <ul class="footer_menu cell  small-12">
+                            <li class="footer_item">
+                                <a class="footer_itemlink" href="">
+                                    <img src="/img/FACEBOOK.svg" alt="Facebook">
+                                </a>
+                            </li>
+                            <li class="footer_item">
+                                <a class="footer_itemlink" href="">
+                                    <img src="/img/TWITTER.svg" alt="Twitter">
+                                </a>
+                            </li>
+                            <li class="footer_item">
+                                <a class="footer_itemlink" href="">
+                                    <img src="/img/INSTAGRAM.svg" alt="Instagram">
+                                </a>
+                            </li>
+                            <li class="footer_item">
+                                <a class="footer_itemlink" href="">
+                                    <img src="/img/YOUTUBE.svg" alt="Youtube">
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="footer_text cell small-12">
+                            <a class="footer_mentions" href="*">
+                                <p>Mentions légales</p>
+                            </a>
+                            <p class="footer_copyright">© Corps spatial de l'armée française</p>
+                        </div>
+                    </div>
+                </div>
             </footer>
         {% endblock %}
         {% block javascripts %}{% endblock %}
