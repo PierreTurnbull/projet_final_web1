@@ -6,23 +6,26 @@
 <div class="grid-container">
     <div class="grid-x">
         <div class="edito grid-x grid-padding-x align-middle">
-            <div class="small-12 medium-6">
-                <h1 class="title small-12">
+            <div class="cell small-12 medium-6">
+                <h1 class="edito__title small-12">
                 L'actualité
                 </h1>
             </div>
 
-            <div class="small-12 medium-5">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolore itaque sint porro sed excepturi voluptatum obcaecati tempora veritatis sunt aspernatur ad, id quae rem ullam, magni non a officiis?</p>
+            <div class="cell small-12 medium-6">
+                <p class="edito__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolore itaque sint porro sed excepturi voluptatum obcaecati tempora veritatis sunt aspernatur ad, id quae rem ullam, magni non a officiis?</p>
             </div>
         </div>
-        
-        
 
         {% for article in articleList %}
-        <div class="cell small-12 medium-6">
+        {% if loop.index % 2 %}
+            {% set item_classes = '' %}
+        {% else %}
+            {% set item_classes = 'medium-offset-2' %}
+        {% endif %}
+        <div class="cell small-12 medium-5 {{ item_classes }} ">
             <div class="grid-x grid-padding-x align-center">
-                <div class="Article grid-x cell align-middle small-12 medium-10">
+                <div class="Article grid-x align-middle small-12 medium-12">
                     <div class="Article__imgContainer small-5 medium-12">
                         <a class="Article__imgLink" href="/actualites/{{ article.id }}">
                             <img src="https://fakeimg.pl/250x500/" alt="" class="Article__img">
