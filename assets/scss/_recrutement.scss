@@ -3,62 +3,32 @@
 }
 
 .recrutement {
+  &_section {
+    text-align: center;
+    @media screen and (min-width: 64em) {
+      text-align: left;
+    }
+  }
+  &_container {
+    position: relative;
+  }
+  &_img {
+    width: 50%;
+    margin: 0 auto;
+    @media screen and (min-width: 64em) {
+      width: 100%;
+      margin: 0;
+    }
+  }
+  &_title {
+    margin: 0 auto;
+    @media screen and (min-width: 64em) {
+      position: absolute;
+      font-size: 25px;
+      bottom: 30%;
+    }
+  }
   .margin_bottom {
     margin-bottom: 10em;
-  }
-  .parcours_recrutement {
-    &_title {}
-    &_text {}
-  }
-  .submit {
-    &_container {
-      position: relative;
-    }
-    &_img {
-      width: 50%;
-      @media screen and (min-width: 64em) {
-        width: 100%;
-      }
-    }
-    &_title {
-      width: 100%;
-      font-size: 25px;
-      position: absolute;
-      bottom: 30%;
-    }
-  }
-  .rendez-vous {
-    &_container {
-      position: relative;
-    }
-    &_img {
-      width: 50%;
-      @media screen and (min-width: 64em) {
-        width: 100%;
-      }
-    }
-    &_title {
-      width: 100%;
-      font-size: 25px;
-      position: absolute;
-      bottom: 30%;
-    }
-  }
-  .tests {
-    &_container {
-      position: relative;
-    }
-    &_img {
-      width: 50%;
-      @media screen and (min-width: 64em) {
-        width: 100%;
-      }
-    }
-    &_title {
-      width: 100%;
-      font-size: 25px;
-      position: absolute;
-      bottom: 30%;
-    }
   }
 }
