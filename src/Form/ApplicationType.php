@@ -18,6 +18,7 @@ class ApplicationType extends AbstractType
             ->add('phone')
             ->add('address')
             ->add('job')
+            ->add('thumbnail')
         ;
     }
 
