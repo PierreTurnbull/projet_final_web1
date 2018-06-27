@@ -5,20 +5,20 @@
 {% block body %}
     <div class="grid-container">
         <div class="grid-x align-center ArticlePage">
-            <div class="ArticlePage__infoContainer small-12 medium-10">
+            <div class="ArticlePage__infoContainer small-12 medium-12">
                 <h1 class="ArticlePage__title">
                     {{ article.title }}
                 </h1>
                 <p class="ArticlePage__info"><a href="#">Nom de l'auteur</a>, publié le {{ article.creationDate ? article.creationDate|date('Y-m-d H:i:s') : '' }}</p>
             </div>
 
-            <div class="ArticlePage__imgContainer small-12 medium-10">
+            <div class="ArticlePage__imgContainer small-12 medium-12">
                 <div class="ArticlePage__imgContainerContainer">
                     <img src="https://fakeimg.pl/250x500/" alt="" class="ArticlePage__img small-12">
                 </div>
             </div>
 
-            <div class="ArticlePage__content small-12 medium-10">
+            <div class="ArticlePage__content small-12 medium-12">
                 {{ article.content }}
             </div>
             

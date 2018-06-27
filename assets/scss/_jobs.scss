@@ -1,20 +1,23 @@
-.jobs{
-
-&-box-container{
-  border : 1px solid #084887;
-  border-radius: 5px;
-  margin-bottom: 10px;
+.jobs {
+  &-box-container {
+    border: 1px solid #084887;
+    border-radius: 5px;
+    margin-bottom: 5em;
+  }
+  &-box-text {
+    padding: 20px;
+    margin: 0;
+    text-align: center;
+  }
+  &__categorieTitle {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 2em 0;
+  }
 }
-&-box-text{
-  padding: 20px;
-  margin: 0;
-  text-align: center;
-}
-}
-
 
 // some stuff to make my work easier
-
 // .marginAuto{
 //   display: table;
 //   margin: 0 auto;
