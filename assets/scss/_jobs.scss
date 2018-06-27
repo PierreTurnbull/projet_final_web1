@@ -1,8 +1,10 @@
 .jobs {
   &-box-container {
+    display: block;
     border: 1px solid #084887;
     border-radius: 5px;
     margin-bottom: 5em;
+    color: #ffffff;
   }
   &-box-text {
     padding: 20px;

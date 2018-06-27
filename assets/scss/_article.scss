@@ -28,6 +28,7 @@
     right: 0;
     height: 100%;
     width: 100%;
+    object-fit: cover;
   }
   &__info {
     padding: 1em 0;
@@ -38,10 +39,7 @@
     text-transform: uppercase; //font-family: 'Allerta Stencil', sans-serif;
   }
   &__author {
-    transition: 0.26s;
-    &:hover {
-      font-weight: 600;
-    }
+    font-weight: 600;
   }
   &__title,
   &__author {
