@@ -20,7 +20,9 @@ class JobsController extends Controller
      */
     public function index(JobsRepository $jobsRepository): Response
     {
-        return $this->render('admin/jobs/index.html.twig', ['jobs' => $jobsRepository->findAll()]);
+        return $this->render('admin/jobs/index.html.twig', [
+            'jobs' => $jobsRepository->findAll()
+        ]);
     }
 
     /**
@@ -40,7 +42,7 @@ class JobsController extends Controller
             return $this->redirectToRoute('jobs_index');
         }
 
-        return $this->render('admin/jobs/index.html.twig', [
+        return $this->render('admin/jobs/new.html.twig', [
             'job' => $job,
             'form' => $form->createView(),
         ]);

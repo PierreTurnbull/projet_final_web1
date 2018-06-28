@@ -5,22 +5,23 @@ namespace App\Controller;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Entity\Jobs;
+use App\Repository\JobsRepository;
 
 class JobsController extends Controller
 {
     /**
      * @Route("/metiers", name="jobs")
      */
-    public function index()
+    public function index(JobsRepository $jobsRepository)
     {
         return $this->render('jobs/index.html.twig', [
-            'controllerName' => 'JobsController',
-            'job1' => 'ANALYSTE EN RENSEIGNEMENT GÉOSPATIAL',
-            'job2' => 'CARTOGRAPHE SPATIAL',
-            'job3' => 'ARCHITECTE DE DONNÉES RÉFÉRENCÉES',
-            'job4' => 'ANALYSTE EN RENSEIGNEMENT GÉOSPATIAL',
-            'job5' => 'TIDADIDADOUM',
-            'job6' => 'ABIBARATOUM'
+            'jobs_categories' => [
+                'Intelligence Géospatiale',
+                'Escadre armée',
+                'Ingénierie',
+                'Soutien'
+            ],
+            'jobs' => $jobsRepository->findAll()
         ]);
     }
 
