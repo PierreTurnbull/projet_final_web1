@@ -27,7 +27,7 @@ class Application
     private $lastName;
 
     /**
-     * @ORM\Column(type="string", length=64, unique=true)
+     * @ORM\Column(type="string", length=64)
      */
     private $email;
 

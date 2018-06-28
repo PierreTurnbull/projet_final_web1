@@ -85,6 +85,8 @@ class NewsController extends Controller
      */
     public function edit(Request $request, News $news): Response
     {
+        $form = $this->createForm(NewsType::class, $job);
+        $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();

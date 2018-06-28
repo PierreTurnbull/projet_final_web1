@@ -15,6 +15,11 @@ class Kernel extends BaseKernel
 
     const CONFIG_EXTS = '.{php,xml,yaml,yml}';
 
+    public function getCharset()
+    {
+        return 'UTF-8';
+    }
+
     public function getCacheDir()
     {
         return $this->getProjectDir().'/var/cache/'.$this->environment;
