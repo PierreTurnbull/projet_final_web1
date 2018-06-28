@@ -1,10 +1,10 @@
-{% extends 'base.html.twig' %}
+{% extends 'admin.html.twig' %}
 
 {% block title %}Jobs index{% endblock %}
 
 {% block body %}
     <h1>Jobs index</h1>
-
+<div class="table-scroll">
     <table class="table">
         <thead>
             <tr>
@@ -60,6 +60,7 @@
         {% endfor %}
         </tbody>
     </table>
-
+</div>
+<div class="informations-target-array">← Target the array and scroll right or left to see more →</div>
     <a href="{{ path('jobs_new') }}">Create new</a>
 {% endblock %}
