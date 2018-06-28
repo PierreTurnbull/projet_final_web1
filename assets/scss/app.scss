@@ -250,6 +250,36 @@ body {
   }
 }
 
+.PageFooter {
+  padding: 2em 0 0 0;
+  background-color: #084887;
+  text-align: center;
+  .footer_menu {
+    display: inline-block;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    .footer_item {
+      margin-right: 2em;
+      list-style: none;
+      display: inline-block;
+      &:hover {
+        fill: #F7F5FB;
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .footer_mentions {
+    display: inline-block;
+    color: #F7F5FB;
+    font-weight: 500;
+    &:hover {
+      color: #F7F5FB;
+    }
+  }
+}
+
 @keyframes shine {
   0% {
     color: rgba(255, 255, 255, 0.3);
@@ -372,5 +402,7 @@ body {
 @import 'recrutement';
 @import './description.scss';
 @import './jobs.scss';
+@import './ficheMetier.scss';
 @import 'article';
 @import 'jobCard';
+@import 'login';
