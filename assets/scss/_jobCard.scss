@@ -1,0 +1,42 @@
+.jobCard {
+  height: 300px;
+  margin-bottom: 2em;
+  @media screen and (min-width: 64em) {
+    margin-bottom: 0;
+  }
+  &__link {
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.articleBox {
+  height: auto;
+  @media screen and (min-width: 64em) {
+    height: 500px;
+  }
+  &__imgContainerFirst {
+    height: 200px;
+    margin-bottom: 2em;
+    @media screen and (min-width: 64em) {
+      height: 100%;
+      margin-bottom: 0;
+    }
+  }
+  &__imgContainerLeft {
+    height: 200px;
+    margin-bottom: 2em;
+    @media screen and (min-width: 64em) {
+      height: 50%;
+      margin-bottom: 0;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
