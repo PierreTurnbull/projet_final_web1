@@ -2,14 +2,19 @@
 
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
+{% block homeClass %}home{% endblock %}
+{% block homeTitle %}
+  <h1 class="PageHeader__title">Corps spatial de l'armée française</h1>
+{% endblock %}
+
 {% block body %}
 <div class="grid-container">
   <div class="grid-x align-center">
       <div class="edito grid-x grid-padding-x align-middle">
           <div class="cell small-12 medium-6">
-              <h1 class="edito__title small-12">
+              <h2 class="edito__title small-12">
                 Nos missions
-              </h1>
+              </h2>
           </div>
 
           <div class="cell small-12 medium-6">
