@@ -3,8 +3,68 @@
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-    <div class="example-wrapper">
-        <p>this is the content of the "<span></span>" page</p>
-        <script>document.querySelector("span").textContent = "{{ controller_name }}".replace("Controller", "");</script>
+<div class="background">
+    <div class="grid-container">
+        <div class="contact grid-x align-center">
+            <div class="edito grid-x grid-padding-x align-middle">
+                <div class="cell small-12 medium-6">
+                    <h1 class="edito__title small-12">Contact</h1>
+                </div>
+                <div class="cell small-12 medium-6">
+                    <p class="edito__text">Votre travail consiste à analyser des données d’un haut intérêt géostratégique, au profit des décideurs politiques et militaires. Votre évaluation de la situation militaire et de la situation sécuritaire permet une protection accrue de nos soldats sur le terrain et contribue à défendre notre nation contre la menace ennemie.</p>
+                </div>
+            </div>  
+
+            <div class="contact_img">
+                <img src="https://fakeimg.pl/643x279/">
+            </div>
+            
+            <section class="contact_coordonnees">
+                <h2 class="contact_coordonnees_title">Coordonnées du siège du corps spatial de l'armée francaise</h2>
+                <adress class="contact_coordonnees_adress">
+                    <p class="contact_coordonnees_text">15 rue du Faubourg Saint-Honoré</p>
+                    <p class="contact_coordonnees_text">75008 Paris</p>
+                    <p class="contact_coordonnees_text">FRANCE</p>
+                    <p class="contact_coordonnees_text">+33 140 876 38</p>
+                </adress>
+            </section>
+
+            <section class="contact_formulaire">
+                <h2 class="contact_formulaire_title">Besoin d'informations ? envoyez-nous un message, nous vous répondrons sous 72h</h2>
+                <form action="">
+                    <div class="grid-container">
+                        <div class="grid-x grid-padding-x">
+                            <div class="small-6 cell">
+                                <input class="contact_formulaire_input" type="text" placeholder="Votre nom">
+                            </div>
+                            <div class="small-6 cell">
+                                <input class="contact_formulaire_input" type="text" placeholder="Votre Prénom">
+                            </div>
+                        </div>
+
+                        <div class="grid-x grid-padding-x">
+                            <div class="small-6 cell">
+                                <input class="contact_formulaire_input" type="email" placeholder="Votre email">
+                            </div>
+                            <div class="small-6 cell">
+                                <input class="contact_formulaire_input" type="tel" placeholder="Votre numéro de téléphone">
+                            </div>
+                        </div>
+
+                        <div class="grid-x grid-padding-x">
+                            <div class="small-12 cell">
+                            <textarea class="contact_formulaire_input" name="message" id="contact_formulaire_message" placeholder="Votre message"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="grid-x grid-padding-x align-center">
+                                <input type="submit" placeholder="Envoyer">
+                        </div>
+                        
+                    </div>
+                </form>
+            </section>
+        </div>
     </div>
+</div>
 {% endblock %}

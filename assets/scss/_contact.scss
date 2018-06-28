@@ -1,0 +1,16 @@
+.contact {
+  &_img {}
+  &_coordonnee {
+    &_title {}
+    &_text {}
+  }
+  &_formulaire {
+    &_title {}
+    &_input {
+      background: none;
+      &:focus {
+        background: none;
+      }
+    }
+  }
+}
