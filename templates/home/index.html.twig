@@ -3,81 +3,118 @@
 {% block title %}Hello {{ controller_name }}!{% endblock %}
 
 {% block body %}
-<div class="wrapper">
-    <section class="header section grid-x align-middle">
-      <canvas-bg class="header__background"></canvas-bg>
-      <div class="grid-container cell header__hover">
-        <div class="grid-x align-middle">
-          <div class="cell small-10 large-8">
-            <div class="grid-x grid-padding-x">
-              <h1 class="header__title cell large-12">Corps spatial de l'armée française</h1>
-              <p class="header__text cell large-7">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, possimus ab? 
-              </p>
-              <div class="cell large-12">
-                <router-link to="/">
-                  <a >Engagez-vous</a>
-                </router-link>
-              </div>
-              
+<div class="grid-container">
+  <div class="grid-x align-center">
+      <div class="edito grid-x grid-padding-x align-middle">
+          <div class="cell small-12 medium-6">
+              <h1 class="edito__title small-12">
+                Nos missions
+              </h1>
+          </div>
+
+          <div class="cell small-12 medium-6">
+              <p class="edito__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolore itaque sint porro sed excepturi voluptatum obcaecati tempora veritatis sunt aspernatur ad, id quae rem ullam, magni non a officiis?</p>
+              <a href="/decouvrir-le-corps-spatial" class="callToAction">En savoir plus</a>
+          </div>
+      </div>
+  </div>
+
+  <div class="bloc grid-x grid-padding-x">
+    <h2 class="sectionTitle cell small-12">Des opportunités de carrières</h2>
+
+    <div class="jobCard cell small-12 large-3">
+      <a href="#" class="jobCard__link">
+        <img src="https://fakeimg.pl/250x100/" alt="" class="jobCard__img">
+      </a>
+    </div>
+    <div class="jobCard cell small-12 large-3">
+      <a href="#" class="jobCard__link">
+        <img src="https://fakeimg.pl/250x100/" alt="" class="jobCard__img">
+      </a>
+    </div>
+    <div class="jobCard cell small-12 large-3">
+      <a href="#" class="jobCard__link">
+        <img src="https://fakeimg.pl/250x100/" alt="" class="jobCard__img">
+      </a>
+    </div>
+    <div class="jobCard cell small-12 large-3">
+      <a href="#" class="jobCard__link">
+        <img src="https://fakeimg.pl/250x100/" alt="" class="jobCard__img">
+      </a>
+    </div>
+
+    <div class="cell small-12">
+      <a href="/metiers" class="callToAction">Voir toutes les offres</a>
+    </div>
+    
+  </div>
+
+  <div class="bloc grid-x grid-padding-x">
+    <h2 class="sectionTitle cell small-12">Le parcours de recrutement</h2>
+
+    <div class="home_recruitement recrutement_container submit_container cell small-12 large-4">
+      <div class="recrutement_img submit_img">
+          <img src="/img/Submit1.svg" alt="rejognez-nous">
+      </div>
+      <h2 class="recrutement_title submit_title">Je soumets mon application</h2>
+    </div>
+
+    <div class="home_recruitement recrutement_container rendez-vous_container cell small-12 large-4">
+      <div class="recrutement_img submit_img">
+          <img src="/img/Calendar2.svg" alt="prendre rendez-vous">
+      </div>
+      <h2 class="recrutement_title rendez-vous_title">J'ai rdv avec un officier</h2>
+    </div>
+
+    <div class="home_recruitement recrutement_container tests_container cell small-12 large-4">
+      <div class="recrutement_img test_img">
+          <img src="/img/Tests3.svg" alt="Tests">
+      </div>
+      <h2 class="recrutement_title tests_title">Je passe les tests</h2>
+    </div>
+
+
+    <div class="cell small-12">
+      <a href="/metiers" class="callToAction">Plus d'informations</a>
+    </div>
+    
+  </div>
+
+  <div class="bloc grid-x grid-padding-x">
+    <h2 class="sectionTitle cell small-12">Restez informormé sur l'actualité du corps spatiale</h2>
+
+    <div class="cell small-12">
+      <div class="articleBox grid-x">
+        <div class="small-12 medium-6 articleBox__imgContainerFirst">
+          <a href="#">
+            <img src="https://fakeimg.pl/250x100/" alt="" class="articleBox__img">
+          </a>
+        </div>
+        <div class="small-12 medium-6">
+          <div class="articleBox grid-x">
+            <div class="small-12 articleBox__imgContainerLeft">
+              <a href="#">
+                <img src="https://fakeimg.pl/250x100/" alt="" class="articleBox__img">
+              </a>
             </div>
-            
+            <div class="small-12 articleBox__imgContainerLeft">
+              <a href="#">
+                <img src="https://fakeimg.pl/250x100/" alt="" class="articleBox__img">
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="header section grid-x align-middle">
-      <div class="grid-container cell header__hover">
-        <div class="grid-x align-middle">
-          <div class="cell small-10 large-8">
-            <div class="grid-x grid-padding-x">
-              <h1 class="header__title cell large-12">Nos emplois</h1>
-              <p class="header__text cell large-7">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, possimus ab? 
-              </p>
-              <div class="cell large-12">
-                <router-link to="/">
-                  <a >Engagez-vous</a>
-                </router-link>
-              </div>
-              
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="header section grid-x align-middle">
-      <div class="grid-container cell header__hover">
-        <div class="grid-x align-middle">
-          <div class="cell small-10 large-8">
-            <div class="grid-x grid-padding-x">
-              <h1 class="header__title cell large-12">Parcours de recrutement</h1>
-              <p class="header__text cell large-7">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, possimus ab? 
-              </p>
-              <div class="cell large-12">
-                <router-link to="/">
-                  <a >Engagez-vous</a>
-                </router-link>
-              </div>
-              
-            </div>
-            
-          </div>
-        </div>
-      </div>
-    </section>
-    <div class="progress grid-x">
-      <div class="progress__number cell large-12">
-        01
-      </div>
-      <div class="progress__bar cell large-12">
-        <span></span>
-      </div>
-      <div class="progress__number progress__number__isActive cell large-12">
-        06
       </div>
     </div>
+
+    <div class="cell small-12">
+      <a href="/actualites" class="callToAction">Plus d'informations</a>
+    </div>
+    
   </div>
+</div>
 {% endblock %}
+{% block javascripts %}
+  <script src="{{ asset('js/header.js') }}"></script>
+{% endblock %}
+

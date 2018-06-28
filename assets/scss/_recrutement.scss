@@ -1,5 +1,5 @@
 .background {
-  background: url('/img/satellite.png')bottom right no-repeat;
+  background: url('/img/satellite.png') bottom right no-repeat;
 }
 
 .recrutement {
@@ -30,5 +30,16 @@
   }
   .margin_bottom {
     margin-bottom: 10em;
+  }
+}
+
+.home_recruitement {
+  text-align: center;
+  .recrutement_title {
+    @media screen and (min-width: 64em) {
+      bottom: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 }
