@@ -1,14 +1,17 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Application{% endblock %}
+{% block title %}Soumission de candidature{% endblock %}
 
 {% block body %}
-    <h1>Create new Application</h1>
+    <div class="grid-container">
+        
+        <h1 class="center">Soumission de candidature</h1>
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <button class="btn">{{ button_label|default('Save') }}</button>
-    {{ form_end(form) }}
+        {{ form_start(form) }}
+            {{ form_widget(form) }}
+            <button class="callToAction">Candidater</button>
+        {{ form_end(form) }}
 
-    <a href="{{ path('application_index') }}">back to list</a>
+    </div>
+    
 {% endblock %}
