@@ -12,6 +12,7 @@ body {
 
 .wrapper {
   padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 .sectionTitle {
@@ -316,6 +317,7 @@ body {
   align-items: center;
   &__title {
     top: -80px;
+    text-align: center;
     position: relative;
     z-index: 5;
     font-family: 'Allerta Stencil', sans-serif;
