@@ -28,22 +28,10 @@ class JobsController extends Controller
     /**
      * @Route("/metiers/{id}", name="jobsArticle")
      */
-    public function article($id)
+    public function article($id, JobsRepository $jobsRepository)
     {
         return $this->render('jobs/article.html.twig', [
-            'controllerName' => 'JobsController',
-            'grade' => 'Capitaine',
-            'profilRc' => 'Vous maniez les chiffres avec brio.
-            Vous possédez des qualités d’analyse et de discernement.
-            Vous avez un esprit de synthèse, et le sens du détail.
-            Vous témoignez d’un bon sens du relationnel, et des qualités de communications.',
-            'age' => '25 ans',
-            'niveauEtude' => 'Bac +5',
-            'contrat' => 'CDI',
-            'salaire' => '8,330 €',
-            'nbPoste' => '5',
-
-
+            'job' => $jobsRepository->find($id)
         ]);
     }
 
