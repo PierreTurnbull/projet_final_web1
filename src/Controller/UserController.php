@@ -21,7 +21,8 @@ class UserController extends Controller
             ->findBy(['candidateID' => $id]);
         return $this->render('user/index.html.twig', [
             'controller_name' => 'ApplicationController',
-            'applications' => $applications
+            'applications' => $applications,
+            'username'=> $this->getUser()->getUsername()
         ]);
     }
 }

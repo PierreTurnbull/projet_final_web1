@@ -7,6 +7,7 @@ Encore
   .setPublicPath('/build')
   // .addEntry('app', './assets/js/main.js')
   .addEntry('css/app', './assets/scss/app.scss')
+  .addEntry('css/admin', './assets/scss/admin.scss')
   .cleanupOutputBeforeBuild()
   .enableSourceMaps(!Encore.isProduction())
   .enableVueLoader()
