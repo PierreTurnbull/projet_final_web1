@@ -16,6 +16,8 @@
                 <th>Address</th>
                 <th>Job</th>
                 <th>State</th>
+                <th>Date du prochain RDV</th>
+                <th>Lieu du prochain RDV</th>
                 <th>actions</th>
             </tr>
         </thead>
@@ -37,6 +39,12 @@
                         acceptée
                     {% endif %}
                 </td>
+                <td>
+                    {% if application.rdvDate is not null %}
+                        {{ application.rdvDate|date('d-m-Y') }}
+                    {% endif %}
+                </td>
+                <td>{{ application.rdvPlace }}</td>
                 <td>
                     <a href="{{ path('application_show', {'id': application.id}) }}">show</a>
                 </td>

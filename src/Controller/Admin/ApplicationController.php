@@ -78,11 +78,13 @@ class ApplicationController extends Controller
     }
 
     /**
-     * @Route("/etape-suivante/{id}", name="application_next", methods="PUT")
+     * @Route("/etape-suivante/{id}", name="application_next", methods="POST")
      */
     public function next(Request $request, Application $application): Response
     {
         if ($this->isCsrfTokenValid('next'.$application->getId(), $request->request->get('_token'))) {
+            $application->setRdvDate(new \DateTime($request->get('admin_application')['rdvDate']));
+            $application->setRdvPlace($request->get('admin_application')['rdvPlace']);
             $application->setState($application->getState() + 1);
             $em = $this->getDoctrine()->getManager();
             $em->flush();
