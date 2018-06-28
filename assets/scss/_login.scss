@@ -1,17 +1,9 @@
-.login{
-  &-title{
-
-  }
-  &-login-container{
-    
-  }
-  &-username-input,&-password-input{
-  border-radius: 5px;
-  }
-  &-username,&-password{
+.login {
+  &-username,
+  &-password {
     color: white;
   }
-  &-login-btn{
+  &-login-btn {
     padding: 10px;
     color: black;
     background: #fefefe;

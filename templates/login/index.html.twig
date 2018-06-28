@@ -6,7 +6,7 @@
 <section class="login">
 <div class="grid-container">
 <div class="small-12">
-    <h2 class="login-title small-12 text-center ">Login Page</h2>
+    <h2 class="login-title small-12 text-center ">Se connecter</h2>
     {# if an error occured while authenticating, show the error message #}
     {% if error %}
         <p class="text-center">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
@@ -16,15 +16,15 @@
       <div class="login-login-container grid-x small-12 medium-7 ">
         <label class="login-username small-12" for="username">Username:</label>
         {# do not change the name property of any input #}
-        <input class="login-username-input small-12" type="text" id="username" name="_username" value="{{ lastUsername }}" />
+        <input class="contact_formulaire_input login-username-input small-12" type="text" id="username" name="_username" value="{{ lastUsername }}" />
         </div>
         <div class="login-password-container grid-x small-12 medium-7">
         <label class="login-password small-12"for="password">Password:</label>
-        <input class="login-password-input small-12" type="password" id="password" name="_password" />
+        <input class="contact_formulaire_input login-password-input small-12" type="password" id="password" name="_password" />
         </div>
         <input type="hidden" name="_target_path" value="/mon-compte" />
         <div class="small-12 grid-x align-center">
-          <button type="submit" class="login-login-btn small-1">Login</button>
+          <button type="submit" class="callToAction login-login-btn small-1">Login</button>
         </div>
     </form>
   </div>
