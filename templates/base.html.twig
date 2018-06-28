@@ -60,7 +60,9 @@
         </div>
         {% endblock %}
         <div class="wrapper">
-            <header class="PageHeader">
+            <header class="PageHeader {% block homeClass %}{% endblock %}">
+                {% block homeTitle %}
+                {% endblock %}
             </header>
             {% block body %}{% endblock %}
         </div>

@@ -277,7 +277,7 @@ body {
       list-style: none;
       display: inline-block;
       &:hover {
-        fill: #F7F5FB;
+        fill: #f7f5fb;
       }
       &:last-child {
         margin-right: 0;
@@ -286,10 +286,10 @@ body {
   }
   .footer_mentions {
     display: inline-block;
-    color: #F7F5FB;
+    color: #f7f5fb;
     font-weight: 500;
     &:hover {
-      color: #F7F5FB;
+      color: #f7f5fb;
     }
   }
 }
@@ -308,6 +308,29 @@ body {
   background: #000;
   background: url('/img/blue.png') center center no-repeat;
   background-size: contain;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  &__title {
+    top: -80px;
+    position: relative;
+    z-index: 5;
+    font-family: 'Allerta Stencil', sans-serif;
+    text-transform: uppercase;
+  }
+  &.home {
+    height: 100vh;
+  }
+  & canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 .edito {
