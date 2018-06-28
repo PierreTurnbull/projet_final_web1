@@ -61,6 +61,16 @@ class Application
      */
     private $candidateID;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $rdvDate;
+
+    /**
+     * @ORM\Column(type="string", length=32, nullable=true)
+     */
+    private $rdvPlace;
+
     public function __construct()
     {
         $this->state = 0;
@@ -176,6 +186,30 @@ class Application
     public function setCandidateID(?User $candidateID): self
     {
         $this->candidateID = $candidateID;
+
+        return $this;
+    }
+
+    public function getRdvDate(): ?\DateTimeInterface
+    {
+        return $this->rdvDate;
+    }
+
+    public function setRdvDate(?\DateTimeInterface $rdvDate): self
+    {
+        $this->rdvDate = $rdvDate;
+
+        return $this;
+    }
+
+    public function getRdvPlace(): ?string
+    {
+        return $this->rdvPlace;
+    }
+
+    public function setRdvPlace(?string $rdvPlace): self
+    {
+        $this->rdvPlace = $rdvPlace;
 
         return $this;
     }

@@ -33,6 +33,8 @@ CREATE TABLE `application` (
   `state` int(11) NOT NULL,
   `accepted` tinyint(1) NOT NULL,
   `candidate_id_id` int(11) DEFAULT NULL,
+  `rdv_date` datetime DEFAULT NULL,
+  `rdv_place` varchar(32) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `UNIQ_A45BDDC1E7927C74` (`email`),
   KEY `IDX_A45BDDC147A475AB` (`candidate_id_id`),
@@ -46,7 +48,7 @@ CREATE TABLE `application` (
 
 LOCK TABLES `application` WRITE;
 /*!40000 ALTER TABLE `application` DISABLE KEYS */;
-INSERT INTO `application` VALUES (1,'state1','aaa','a','a','a','a',0,0,2),(3,'state2','c','c','c','c','c',0,0,2),(4,'refused','i','i','i','i','i',0,0,1),(5,'1','1','1','1','1','1',0,0,1),(6,'2','2','2','2','2','2',0,0,2),(7,'5','5','5','5','5','5',0,0,1),(9,'6','aaa','b','b','b','b',0,0,2),(12,'6','aaadmin','bb','b','b','b',0,0,1);
+INSERT INTO `application` VALUES (1,'state1','aaa','a','a','a','a',0,0,2,NULL,NULL),(3,'state2','c','c','c','c','c',0,0,2,NULL,NULL),(4,'refused','i','i','i','i','i',0,0,1,NULL,NULL),(5,'1','1','1','1','1','1',0,0,1,NULL,NULL),(6,'2','2','2','2','2','2',0,0,2,NULL,NULL),(7,'5','5','5','5','5','5',0,0,1,NULL,NULL),(9,'6','aaa','b','b','b','b',0,0,2,NULL,NULL),(12,'6','aaadmin','bb','b','b','b',0,0,1,NULL,NULL);
 /*!40000 ALTER TABLE `application` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,7 +110,7 @@ CREATE TABLE `migration_versions` (
 
 LOCK TABLES `migration_versions` WRITE;
 /*!40000 ALTER TABLE `migration_versions` DISABLE KEYS */;
-INSERT INTO `migration_versions` VALUES ('20180621152939'),('20180621171214'),('20180622133446'),('20180624173007'),('20180625104503'),('20180625114127'),('20180625114938'),('20180625115033'),('20180626092103'),('20180626093722'),('20180626094112'),('20180626135647'),('20180626141720'),('20180626142457'),('20180627070830'),('20180627114108');
+INSERT INTO `migration_versions` VALUES ('20180621152939'),('20180621171214'),('20180622133446'),('20180624173007'),('20180625104503'),('20180625114127'),('20180625114938'),('20180625115033'),('20180626092103'),('20180626093722'),('20180626094112'),('20180626135647'),('20180626141720'),('20180626142457'),('20180627070830'),('20180627114108'),('20180627140324');
 /*!40000 ALTER TABLE `migration_versions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -178,4 +180,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-06-27 14:38:19
+-- Dump completed on 2018-06-27 16:05:43

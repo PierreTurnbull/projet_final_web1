@@ -53,10 +53,13 @@
 
     {# faire passer la candidature à l'étape suivante #}
     {% if application.state < 2 and application.state != -1 %}
-        <form method="post" action="{{ path('application_next', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to set this application to the next step?');">
-            <input type="hidden" name="_method" value="PUT">
+        <form style="background-color: #D3D3D3" method="post" action="{{ path('application_next', {'id': application.id}) }}" onsubmit="return confirm('Are you sure you want to set this application to the next step?');">
+            <input type="hidden" name="_method" value="POST">
             <input type="hidden" name="_token" value="{{ csrf_token('next' ~ application.id) }}">
-            <button class="btn">Faire passer cette candidature à l'étape {{ application.state + 1 }}</button>
+            {# display the inputs to fill informations concerning the rdv #}
+            <button class="btn" type="button">Faire passer cette candidature à l'étape {{ application.state + 1 }}</button>
+            {# display the rdv form #}
+            {{ include('admin/application/_rdv.html.twig') }}
         </form>
     {% endif %}
 
