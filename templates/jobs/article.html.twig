@@ -3,5 +3,32 @@
 {% block title %}Hello {{ controllerName }}!{% endblock %}
 
 {% block body %}
-    <div>article data</div>
+
+<section class="fiche">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x align-center align-middle">
+      <h2 class="fiche-title cell small-12 medium-5 large-6 text-center align-center">
+        Analyste en renseignement géopastial
+      </h2>
+      <div class="fiche-title-text cell small-12 medium-5 large-6 ">
+      Minutieusement détaillées, elles vous disent tout du voyage décrit nos articles : Hôtels, restaurants, boutiques, musée, shopping, The Place to be et aussi quelle est la meilleure compagnie aérienne pour rejoindre par exemple  San Francisco, quelles sont les meilleures dates, comment aller à pied de Nob Hill au Golden Gate en passant par des ruelles remplies de street art méconnus du grand public, arriver pile à l'heure pour être dans l'axe du soleil sur le 3ème pilier et réussir à coup sûr la photo du siècle tout en s'émerveillant de la beauté de la Bay... ça, c'est Une Année de Voyages !
+      <p class="fiche-grade-text">
+        Grade : {{ grade }}
+      </p>
+    </div>
+    <img class="fiche-img small-12" src="https://fakeimg.pl/643x279/">
+    <div class="grid-x grid-padding-x align-middle align-center small-12">
+<div class="fiche-categories-container cell align-center small-12 medium-10 text-center">
+  <p class="fiche-text">Profil recherché : <span class="fiche-span-padding">{{ profilRc }}</span></p>
+  <p class="fiche-text">Age requis : <span class="fiche-span-padding">{{ age }}</span></p>
+  <p class="fiche-text">Niveau d'études : <span class="fiche-span-padding">{{ niveauEtude }}</span></p>
+  <p class="fiche-text">Type de contract : <span class="fiche-span-padding">{{ contrat }}</span></p>
+  <p class="fiche-text">Salaire : <span class="fiche-span-padding">{{ salaire }}</span></p>
+  <p class="fiche-text">Nombre de postes à pourvoir : <span class="fiche-span-padding">{{ nbPoste }}</span></p>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
 {% endblock %}

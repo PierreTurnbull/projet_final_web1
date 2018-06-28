@@ -3,16 +3,42 @@
 @import 'foundation.min';
 body {
   background: #000000;
-  color: #F7F5FB;
+  color: #f7f5fb;
   height: 100vh;
   overflow-x: hidden;
-  overflow: auto;
   font-size: 18px;
   font-family: 'Rajdhani', sans-serif;
 }
 
 .wrapper {
   padding-top: 80px;
+}
+
+.sectionTitle {
+  display: block;
+  padding-left: 70px;
+  margin: 2em 0;
+  font-size: 20px;
+  text-transform: uppercase;
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    background: url('/img/arrow.svg');
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.bloc {
+  margin-bottom: 5em;
+  text-align: center;
+  @media screen and (min-width: 64em) {
+    text-align: left;
+  }
 }
 
 .Navigation {
@@ -230,10 +256,10 @@ body {
   padding: 0.5em 1em;
   margin-top: 1em;
   background: #084887;
-  color: #F7F5FB;
+  color: #f7f5fb;
   border-radius: 6px;
   &:hover {
-    color: #F7F5FB;
+    color: #f7f5fb;
   }
 }
 
@@ -277,7 +303,7 @@ body {
 }
 
 .PageHeader {
-  height: 40vh;
+  min-height: 40vh;
   background: #000;
   background: url('/img/blue.png') center center no-repeat;
   background-size: contain;
@@ -286,6 +312,7 @@ body {
 .edito {
   height: auto;
   margin-bottom: 2em;
+  text-align: center;
   @media screen and (min-width: 64em) {
     min-height: 50vh;
     text-align: left;
@@ -303,7 +330,10 @@ body {
     }
   }
   &__text {
-    text-align: left;
+    text-align: center;
+    @media screen and (min-width: 64em) {
+      text-align: left;
+    }
   }
 }
 
@@ -366,8 +396,28 @@ body {
   }
 }
 
+.callToAction {
+  display: inline-block;
+  background: none;
+  border: 1px solid #074887;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  transition: 0.26s;
+  &:hover {
+    background: #074887;
+    color: #ffffff;
+  }
+}
+
 @import 'recrutement';
 @import './description.scss';
 @import './jobs.scss';
+@import './ficheMetier.scss';
 @import 'article';
 @import 'contact';
+@import 'jobCard';
+@import 'login';

@@ -1,15 +1,33 @@
 .contact {
-  &_img {}
-  &_coordonnee {
-    &_title {}
-    &_text {}
+  &_title {
+    font-size: 20px;
+  }
+  &_coordonnees {
+    &_adress {
+      text-align: center;
+      @media screen and (min-width: 64em) {
+        text-align: left;
+      }
+    }
   }
   &_formulaire {
-    &_title {}
     &_input {
+      color: #f7f5fb;
       background: none;
+      border: none;
+      border-bottom: 1px solid #f7f5fb;
       &:focus {
         background: none;
+        color: #f7f5fb;
+        border: none;
+        border-bottom: 1px solid #f7f5fb;
+        box-shadow: none;
+      }
+    }
+    textarea {
+      border: 1px solid #f7f5fb;
+      &:focus {
+        border: 1px solid #f7f5fb;
       }
     }
   }
