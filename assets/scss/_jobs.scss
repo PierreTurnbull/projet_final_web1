@@ -19,6 +19,32 @@
   }
 }
 
+.job_table,
+table tbody,
+table tfoot,
+table thead,
+table tbody tr {
+  border: 0;
+  background: #000 !important;
+}
+
+tr {
+  margin: 1em 0;
+}
+
+.job_table_left,
+.job_table_right {
+  width: 50%;
+}
+
+.job_table_left {
+  vertical-align: top;
+  @media screen and (min-width: 64em) {
+    padding-right: 5em;
+    text-align: right;
+  }
+}
+
 // some stuff to make my work easier
 // .marginAuto{
 //   display: table;
