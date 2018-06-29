@@ -19,20 +19,17 @@
             </div>
         </div>
         <div class="jobsList">
-
+            {% for category in jobs_categories %}
+            <h3 class="sectionTitle jobs__categorieTitle cell small-12">{{ category }}</h3>
             <div class="jobs-boxs-container small-12">
-                {% for category in jobs_categories %}
-                    <div>
-                        <h3 class="sectionTitle jobs__categorieTitle cell small-12">{{ category }}</h3>
+                    <div class="grid-x grid-padding-x">
                         {% for job in jobs %}
                             {% if job.category == category %}
-                                <a class="grid-x grid-padding-x align-justify">
-                                    <div class=" cell small-12 medium-6 large-4 ">
+                                    <div class="cell small-12 medium-6 large-4 ">
                                         <a href="{{ path('jobsArticle', {'id': job.id}) }}" class="large-12 jobs-box-container">
                                             <p class="jobs-box-text">{{ job.title }}</p>
                                         </a>
                                     </div>
-                                </a>
                             {% endif %}
                         {% endfor %}
                     </div>
